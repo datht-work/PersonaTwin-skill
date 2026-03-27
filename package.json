@@ -1,0 +1,26 @@
+{
+  "name": "personatwin-skill",
+  "version": "1.3.0",
+  "description": "Synthetic User Testing Cloud based on The Mom Test principles",
+  "main": "SKILL.md",
+  "scripts": {
+    "lint": "npx markdownlint-cli **/*.md",
+    "test": "cd tests && npx promptfoo eval"
+  },
+  "skills": {
+    "personatwin": "SKILL.md"
+  },
+  "author": "PersonaTwin Team (datht-work)",
+  "keywords": [
+    "product-management",
+    "user-testing",
+    "the-mom-test",
+    "synthetic-users",
+    "ai-agent"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "markdownlint-cli": "^0.40.0",
+    "promptfoo": "^0.60.0"
+  }
+}

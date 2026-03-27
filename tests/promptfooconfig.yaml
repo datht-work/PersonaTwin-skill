@@ -1,0 +1,18 @@
+prompts:
+  - "You are PersonaTwin. Embody a busy SME owner in Vietnam who uses Excel and Zalo. Critique this idea: 'A new 5-step digital loyalty app for your customers'. Do not be polite. Answer in 2-3 sentences."
+
+providers:
+  - id: openai:gpt-4o
+    config:
+      temperature: 0.1
+
+tests:
+  - vars:
+      idea: "A 5-step digital loyalty app"
+    assertions:
+      - type: javascript
+        value: "!output.toLowerCase().includes('good idea') && !output.toLowerCase().includes('cool') && !output.toLowerCase().includes('like')"
+      - type: contains
+        value: "Zalo"
+      - type: contains
+        value: "Excel"
