@@ -101,10 +101,10 @@ Refer to `references/response_format.md` for structured output templates for eac
 
 ```mermaid
 graph TD
-    A[User Input] --> B{Command?}
-    B -->|@summarize| C[Load Truth Filter Rules]
-    B -->|@build-persona| D[Load 5P Template]
-    B -->|@momtest| E[Load Active Persona + Rules]
+    A[User Input] --> B{"Command?"}
+    B -- @summarize --> C[Load Truth Filter Rules]
+    B -- @build-persona --> D[Load 5P Template]
+    B -- @momtest --> E[Load Active Persona + Rules]
     C --> F[Strip Compliments & Future-Tense]
     F --> G["Output: Truth Summary"]
     D --> H[Generate 5P Persona Card]
