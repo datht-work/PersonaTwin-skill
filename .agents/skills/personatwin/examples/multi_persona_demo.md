@@ -13,7 +13,7 @@
 
 ## Persona A: "Digital Dũng" (Tech-Forward Cafe Owner, 28yo)
 
-**PM Input**: `/build-persona Young cafe owner in Da Nang, 28, tech-savvy, Instagram-focused brand`
+**PM Input**: `@build-persona Young cafe owner in Da Nang, 28, tech-savvy, Instagram-focused brand`
 
 **PersonaTwin Response**:
 
@@ -32,7 +32,7 @@
 
 ## Persona B: "Cautious Cường" (Traditional Pharmacy Owner, 55yo)
 
-**PM Input**: `/build-persona Pharmacy owner, 55, Hanoi, very traditional, not tech-savvy`
+**PM Input**: `@build-persona Pharmacy owner, 55, Hanoi, very traditional, not tech-savvy`
 
 **PersonaTwin Response**:
 

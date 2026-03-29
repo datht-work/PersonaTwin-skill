@@ -7,7 +7,7 @@
 
 ## Setup: Persona Building
 
-**PM Input**: `/build-persona CFO of a 50-person SaaS startup in Singapore, 42yo, data-driven`
+**PM Input**: `@build-persona CFO of a 50-person SaaS startup in Singapore, 42yo, data-driven`
 
 **Output**:
 
@@ -28,7 +28,7 @@
 
 ---
 
-## Simulation: `/momtest`
+## Simulation: `@momtest`
 
 **PM Pitch**: *"Steven, we built an AI-powered pipeline forecasting tool that integrates with HubSpot. It uses machine learning to predict which deals will close and gives you a real-time revenue dashboard."*
 

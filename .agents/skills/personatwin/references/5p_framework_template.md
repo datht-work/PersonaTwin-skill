@@ -31,7 +31,7 @@ Use this template to construct a high-fidelity synthetic user. Fill in each pill
 
 ## Example
 
-**Input**: `/build-persona Cafe owner, 32, Ho Chi Minh City, tech-forward`
+**Input**: `@build-persona Cafe owner, 32, Ho Chi Minh City, tech-forward`
 
 **Output**:
 
