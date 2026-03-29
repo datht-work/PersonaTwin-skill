@@ -1,5 +1,30 @@
+description: "PersonaTwin skill test suite — validates 8 core behaviors: No Compliment, Status Quo Anchor, Past Tense Focus, Commitment Test, Brevity, Anti-Feature-Dump, SaaS Consistency, and Language Switch."
+
 prompts:
-  - "You are PersonaTwin. Embody a busy SME owner in Vietnam who uses Excel and Zalo. Critique this idea: 'A new 5-step digital loyalty app for your customers'. Do not be polite. Answer in 2-3 sentences."
+  - id: base-prompt
+    raw: >
+      You are PersonaTwin. You embody synthetic user personas and give ruthlessly honest
+      feedback based on "The Mom Test" principles. You NEVER compliment ideas. You always
+      ground your responses in the persona's current behavior and status quo.
+      The active persona is: A busy SME owner in Vietnam, 45 years old, who uses Excel and
+      Zalo for work. She runs a small grocery shop with 2 employees.
+      Critique the following idea in 2-3 sentences. Do not be polite. Be specific.
+
+  - id: saas-prompt
+    raw: >
+      You are PersonaTwin. You embody synthetic user personas and give ruthlessly honest
+      feedback based on "The Mom Test" principles. You NEVER compliment ideas.
+      The active persona is: A CFO of a 50-person SaaS startup. She uses HubSpot, Google Sheets,
+      and Slack daily. She evaluates every tool by ROI and TCO.
+      Critique the following idea in 2-3 sentences. Do not be polite. Be specific.
+
+  - id: language-prompt
+    raw: >
+      You are PersonaTwin. You embody synthetic user personas and give ruthlessly honest
+      feedback based on "The Mom Test" principles. You NEVER compliment ideas.
+      The active persona is: A 40-year-old shop owner in Hanoi.
+      Language instruction: /safeai lang vi — Respond ONLY in Vietnamese.
+      Critique the following idea in 2-3 sentences. Do not be polite. Be specific.
 
 providers:
   - id: openai:gpt-4o
@@ -7,12 +32,108 @@ providers:
       temperature: 0.1
 
 tests:
-  - vars:
-      idea: "A 5-step digital loyalty app"
-    assertions:
+  # Test 1: No Compliment Rule
+  - description: "Core — Must never compliment the idea"
+    vars:
+      idea: "A 5-step digital loyalty app for your customers"
+    prompts: [base-prompt]
+    assert:
       - type: javascript
-        value: "!output.toLowerCase().includes('good idea') && !output.toLowerCase().includes('cool') && !output.toLowerCase().includes('like')"
-      - type: contains
-        value: "Zalo"
-      - type: contains
-        value: "Excel"
+        value: >
+          !output.toLowerCase().includes('good idea') &&
+          !output.toLowerCase().includes('sounds cool') &&
+          !output.toLowerCase().includes('i like') &&
+          !output.toLowerCase().includes('great idea') &&
+          !output.toLowerCase().includes('love it') &&
+          !output.toLowerCase().includes('amazing')
+
+  # Test 2: Status Quo Anchor
+  - description: "Core — Must reference current tools/process"
+    vars:
+      idea: "A cloud-based inventory management system"
+    prompts: [base-prompt]
+    assert:
+      - type: javascript
+        value: >
+          output.toLowerCase().includes('excel') ||
+          output.toLowerCase().includes('zalo') ||
+          output.toLowerCase().includes('notebook') ||
+          output.toLowerCase().includes('paper') ||
+          output.toLowerCase().includes('currently') ||
+          output.toLowerCase().includes('right now')
+
+  # Test 3: Past Tense Focus
+  - description: "Core — Must not use hypothetical language"
+    vars:
+      idea: "An AI assistant that predicts what your customers want to buy"
+    prompts: [base-prompt]
+    assert:
+      - type: javascript
+        value: >
+          !output.toLowerCase().includes('would you') &&
+          !output.toLowerCase().includes('will you') &&
+          !output.toLowerCase().includes('could you')
+
+  # Test 4: Commitment Test
+  - description: "Advanced — Must question commitment when faced with strong claims"
+    vars:
+      idea: "Everyone wants a mobile ordering app. We have 10,000 downloads already."
+    prompts: [base-prompt]
+    assert:
+      - type: javascript
+        value: >
+          output.toLowerCase().includes('pay') ||
+          output.toLowerCase().includes('money') ||
+          output.toLowerCase().includes('cost') ||
+          output.toLowerCase().includes('time') ||
+          output.toLowerCase().includes('download') ||
+          output.toLowerCase().includes('use')
+
+  # Test 5: Brevity (Impatience)
+  - description: "Behavior — Response must be under 150 words"
+    vars:
+      idea: "A complete digital transformation platform for small businesses"
+    prompts: [base-prompt]
+    assert:
+      - type: javascript
+        value: "output.split(/\\s+/).length <= 150"
+
+  # Test 6: Anti-Feature-Dump
+  - description: "Anti-Pattern — Must not engage with all features when too many are pitched"
+    vars:
+      idea: "It has loyalty points, push notifications, QR menus, analytics dashboard, social sharing, and gamification"
+    prompts: [base-prompt]
+    assert:
+      - type: javascript
+        value: >
+          output.split(/[.!?]/).filter(s => s.trim().length > 0).length <= 5
+
+  # Test 7: SaaS Persona Consistency
+  - description: "Industry — SaaS persona must mention ROI, TCO, or cost-related concerns"
+    vars:
+      idea: "An AI-powered sales forecasting tool that integrates with your CRM"
+    prompts: [saas-prompt]
+    assert:
+      - type: javascript
+        value: >
+          output.toLowerCase().includes('roi') ||
+          output.toLowerCase().includes('cost') ||
+          output.toLowerCase().includes('tco') ||
+          output.toLowerCase().includes('pay') ||
+          output.toLowerCase().includes('budget') ||
+          output.toLowerCase().includes('price')
+
+  # Test 8: Language Switch
+  - description: "Multilingual — Response must be in Vietnamese when /safeai lang vi is active"
+    vars:
+      idea: "An app to manage your shop inventory"
+    prompts: [language-prompt]
+    assert:
+      - type: javascript
+        value: >
+          output.includes('tôi') ||
+          output.includes('không') ||
+          output.includes('của') ||
+          output.includes('này') ||
+          output.includes('đang') ||
+          output.includes('hiện')

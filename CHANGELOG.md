@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.0] - 2026-03-29
+
+### Added
+
+- **SKILL.md Open Standard Compliance**: Restructured frontmatter with `license`, `metadata` (version, author, tags), and agent-trigger-optimized `description`
+- **Knowledge Engine Expansion (x4 modules)**:
+  - `knowledge/industry_verticals.md` — SaaS B2B, F&B/Retail, FinTech, EdTech, Consumer App, Security persona behaviors
+  - `knowledge/anti_patterns.md` — 6 common PM anti-patterns with detection + counter-responses
+  - `knowledge/conversation_tactics.md` — 5 advanced conversation techniques (Awkward Silence, Redirect to Status Quo, Specificity Anchor, Commitment Probe, Emotional Anchoring)
+- **Expanded Core Rules**: Added Escalation Logic, Commitment Test, Status Quo Anchor, Truth Filter Summarize rules to `mom_test_rules.md`
+- **References Directory** (replaces `resources/`):
+  - `references/response_format.md` — Structured output templates for all 3 commands
+  - Enhanced `references/5p_framework_template.md` with inference guidance and worked example
+- **New Examples**:
+  - `examples/saas_b2b_demo.md` — SaaS B2B CFO persona demo
+  - `examples/multi_persona_demo.md` — Same pitch, 2 different personas comparison
+- **Test Suite Expansion (x8)**: From 1 test to 8 tests covering No Compliment, Status Quo Anchor, Past Tense Focus, Commitment Test, Brevity, Anti-Feature-Dump, SaaS Consistency, Language Switch
+- **Compatibility Section**: Documented support for Claude Code, Cursor, Codex, and any SKILL.md-compatible agent
+- **Architecture Diagram**: Added mermaid diagram showing skill architecture in README
+- Constraints section (MUST/MUST NOT) in SKILL.md for reliable agent behavior
+
+### Changed
+
+- Renamed `resources/` directory to `references/` to follow SKILL.md Open Standard
+- Restructured SKILL.md body: Core Identity → Prerequisites → Command Workflow → Decision Logic → Constraints → References
+- Moved version history from SKILL.md to CHANGELOG.md (body stays under 5,000 tokens)
+- Enhanced `examples/full_journey_demo.md` with WHY analysis and structured output
+- User Guides now include Industry Presets, Anti-Pattern Detection, and Multi-Persona sections
+
+### Removed
+
+- `resources/` directory (replaced by `references/`)
+
 ## [1.3.0] - 2026-03-27
 
 ### Added
