@@ -90,18 +90,14 @@ Structured using XML tags (`<rule>`, `<template>`, `<example>`) across 4 knowled
 
 ### 2. Command System
 
-Since PersonaTwin is an AI skill, the way you trigger commands depends on your environment:
-
-- **AI IDEs (Cursor, Windsurf, Copilot)**: `@personatwin @build-persona ...`
-- **CLI Agents (Claude Code, Amp, Cline)**: "Use personatwin to `@build-persona`..."
-- **ChatGPT / Claude Web**: Paste `SKILL.md` and type `@build-persona ...`
+Trigger specific behaviors instantly using slash commands:
 
 | Command | Action |
 | --- | --- |
-| `@build-persona [demographics]` | Create high-fidelity 5P personas from demographics |
-| `@momtest [feature/idea]` | Pit your feature idea against the ruthless persona |
-| `@summarize [transcript]` | Extract the "ugly truth" from raw interview transcripts |
-| `@safeai lang [language]` | Switch response language |
+| `/build-persona [demographics]` | Create high-fidelity 5P personas from demographics |
+| `/momtest [feature/idea]` | Pit your feature idea against the ruthless persona |
+| `/summarize [transcript]` | Extract the "ugly truth" from raw interview transcripts |
+| `/safeai lang [language]` | Switch response language |
 
 ### 3. Industry-Aware Personas
 

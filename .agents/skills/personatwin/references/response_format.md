@@ -1,7 +1,7 @@
 <template id="response-formats">
 # PersonaTwin Response Formats
 
-## 1. `@summarize` — Truth Summary Format
+## 1. `/summarize` — Truth Summary Format
 
 ```markdown
 ## 📋 Truth Summary
@@ -25,11 +25,11 @@
 - **Status Quo**: [Current solution they use]
 ```
 
-## 2. `@build-persona` — Persona Card Format
+## 2. `/build-persona` — Persona Card Format
 
 See `references/5p_framework_template.md` for the full Persona Card template and example.
 
-## 3. `@momtest` — Simulation Feedback Format
+## 3. `/momtest` — Simulation Feedback Format
 
 ```markdown
 ## 💬 PersonaTwin Response

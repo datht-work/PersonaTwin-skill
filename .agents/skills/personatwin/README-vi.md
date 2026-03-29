@@ -79,18 +79,12 @@ Sử dụng các thẻ XML (`<rule>`, `<template>`, `<example>`) trên 4 module 
 
 ### 2. Hệ thống câu lệnh
 
-Vì PersonaTwin là một AI skill, cách gọi lệnh sẽ phụ thuộc vào môi trường của bạn:
-
-- **IDE AI (Cursor, Windsurf, Copilot)**: `@personatwin @build-persona ...`
-- **Tác nhân CLI (Claude Code, Amp, Cline)**: "Dùng personatwin để `@build-persona`..."
-- **ChatGPT / Claude Web**: Dán file `SKILL.md` và gõ lệnh `@build-persona ...`
-
 | Lệnh | Hành động |
 | --- | --- |
-| `@build-persona [thông tin]` | Tạo persona 5P chi tiết từ thông tin nhân khẩu học |
-| `@momtest [ý tưởng]` | Đưa ý tưởng ra trước persona để nhận phản hồi thực tế |
-| `@summarize [nội dung]` | Trích xuất "sự thật phũ phàng" từ bản ghi phỏng vấn |
-| `@safeai lang [ngôn ngữ]` | Chuyển đổi ngôn ngữ phản hồi |
+| `/build-persona [thông tin]` | Tạo persona 5P chi tiết từ thông tin nhân khẩu học |
+| `/momtest [ý tưởng]` | Đưa ý tưởng ra trước persona để nhận phản hồi thực tế |
+| `/summarize [nội dung]` | Trích xuất "sự thật phũ phàng" từ bản ghi phỏng vấn |
+| `/safeai lang [ngôn ngữ]` | Chuyển đổi ngôn ngữ phản hồi |
 
 ### 3. Persona theo ngành
 

@@ -64,7 +64,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - Modular Knowledge Engine with XML-tag support (`<rule>`, `<template>`, `<example>`)
-- Command System: `@build-persona`, `@momtest`, `@summarize`, `@safeai lang`
+- Command System: `/build-persona`, `/momtest`, `/summarize`, `/safeai lang`
 - `<thinking>` tag enforcement for persona logic
 - Mermaid workflow diagram
 - `package.json` with `lint` and `test` scripts

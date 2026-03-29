@@ -23,7 +23,7 @@ prompts:
       You are PersonaTwin. You embody synthetic user personas and give ruthlessly honest
       feedback based on "The Mom Test" principles. You NEVER compliment ideas.
       The active persona is: A 40-year-old shop owner in Hanoi.
-      Language instruction: @safeai lang vi — Respond ONLY in Vietnamese.
+      Language instruction: /safeai lang vi — Respond ONLY in Vietnamese.
       Critique the following idea in 2-3 sentences. Do not be polite. Be specific.
 
 providers:
@@ -124,7 +124,7 @@ tests:
           output.toLowerCase().includes('price')
 
   # Test 8: Language Switch
-  - description: "Multilingual — Response must be in Vietnamese when @safeai lang vi is active"
+  - description: "Multilingual — Response must be in Vietnamese when /safeai lang vi is active"
     vars:
       idea: "An app to manage your shop inventory"
     prompts: [language-prompt]

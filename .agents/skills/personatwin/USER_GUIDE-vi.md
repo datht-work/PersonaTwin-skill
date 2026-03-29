@@ -4,24 +4,14 @@ Tài liệu này cung cấp hướng dẫn chi tiết cách sử dụng kỹ nă
 
 ---
 
-## 💡 Cách Kích Hoạt PersonaTwin
-
-Vì PersonaTwin là một AI skill, cách gọi lệnh sẽ phụ thuộc vào môi trường bạn dùng:
-
-- **IDE AI (Cursor, Windsurf, Copilot, v.v.)**: Gọi tên agent và dùng lệnh (vd: `@personatwin @build-persona ...`).
-- **Tác nhân CLI (Claude Code, Amp, Cline, v.v.)**: Giao tiếp bằng ngôn ngữ tự nhiên (vd: "Hãy dùng personatwin để `@build-persona`...").
-- **ChatGPT / Claude Web**: Dán file `SKILL.md` vào ngữ cảnh và gõ trực tiếp lệnh (vd: `@build-persona ...`).
-
----
-
 ## ⚡ Bảng lệnh nhanh (Cheat Sheet)
 
 | Lệnh | Hành động / Hành vi |
 |---|---|
-| `@build-persona [thông tin]` | **Xây dựng Persona**: Tạo một người dùng ảo chi tiết dựa trên khung 5P Framework. |
-| `@momtest [ý tưởng/tính năng]` | **Kiểm thử Mom Test**: Đưa ý tưởng ra trước Persona để nhận phản hồi "phũ phàng" và trung thực. |
-| `@summarize [nội dung]` | **Lọc sự thật (Truth Filter)**: Trích xuất các nỗi đau (Pains) và hành vi thực tế từ bản ghi phỏng vấn. |
-| `@safeai lang [Ngôn ngữ]` | **Đa ngôn ngữ**: Chuyển đổi ngôn ngữ phản hồi (mặc định tự nhận diện). |
+| `/build-persona [thông tin]` | **Xây dựng Persona**: Tạo một người dùng ảo chi tiết dựa trên khung 5P Framework. |
+| `/momtest [ý tưởng/tính năng]` | **Kiểm thử Mom Test**: Đưa ý tưởng ra trước Persona để nhận phản hồi "phũ phàng" và trung thực. |
+| `/summarize [nội dung]` | **Lọc sự thật (Truth Filter)**: Trích xuất các nỗi đau (Pains) và hành vi thực tế từ bản ghi phỏng vấn. |
+| `/safeai lang [Ngôn ngữ]` | **Đa ngôn ngữ**: Chuyển đổi ngôn ngữ phản hồi (mặc định tự nhận diện). |
 
 ---
 
@@ -29,24 +19,24 @@ Vì PersonaTwin là một AI skill, cách gọi lệnh sẽ phụ thuộc vào m
 
 ### Bước 1: Thu thập dữ liệu & Lọc sự thật
 
-Sử dụng lệnh `@summarize` khi bạn có bản ghi phỏng vấn thô. PersonaTwin sẽ loại bỏ những lời khen sáo rỗng và chỉ giữ lại những gì người dùng **đang làm** hoặc **đã làm**.
+Sử dụng lệnh `/summarize` khi bạn có bản ghi phỏng vấn thô. PersonaTwin sẽ loại bỏ những lời khen sáo rỗng và chỉ giữ lại những gì người dùng **đang làm** hoặc **đã làm**.
 
-> `@summarize "Người dùng nói: Sản phẩm của bạn rất hay, tôi sẽ mua nếu có thêm tính năng X. Hiện tại tôi đang dùng Excel để quản lý."`
+> `/summarize "Người dùng nói: Sản phẩm của bạn rất hay, tôi sẽ mua nếu có thêm tính năng X. Hiện tại tôi đang dùng Excel để quản lý."`
 > **Kết quả**: PersonaTwin sẽ chỉ ra rằng ý tưởng "tính năng X" chỉ là giả thuyết, hành vi thực tế là "đang dùng Excel".
 
 ### Bước 2: Xây dựng Persona (5P Framework)
 
-Sử dụng lệnh `@build-persona` để tạo một đối tượng giả lập. Bạn nên cung cấp thông tin nhân khẩu học cơ bản.
+Sử dụng lệnh `/build-persona` để tạo một đối tượng giả lập. Bạn nên cung cấp thông tin nhân khẩu học cơ bản.
 
-> `@build-persona Chủ cửa hàng tạp hóa tại Việt Nam, 45 tuổi, ít rành công nghệ.`
+> `/build-persona Chủ cửa hàng tạp hóa tại Việt Nam, 45 tuổi, ít rành công nghệ.`
 
 PersonaTwin sẽ tạo ra một **Persona Card** có cấu trúc với Profile, Psychology, Pains & Gains, Proficiency và Principles.
 
 ### Bước 3: Giả lập phản hồi (Mom Test Simulation)
 
-Sử dụng lệnh `@momtest` để kiểm tra ý tưởng của bạn.
+Sử dụng lệnh `/momtest` để kiểm tra ý tưởng của bạn.
 
-> `@momtest "Tôi muốn làm một ứng dụng tích điểm 5 bước cho cửa hàng của bạn."`
+> `/momtest "Tôi muốn làm một ứng dụng tích điểm 5 bước cho cửa hàng của bạn."`
 > **PersonaTwin**: "Tôi không có thời gian cho 5 bước. Tôi còn bận trông tiệm. Hiện tại tôi chỉ nhớ mặt khách rồi bớt cho họ 2-3 nghìn cho nhanh."
 
 ---
@@ -66,8 +56,8 @@ PersonaTwin có các quy tắc hành vi persona được cấu hình sẵn cho 6
 
 ### Ví dụ: Persona SaaS B2B
 
-> `@build-persona CFO công ty SaaS 50 người, Singapore, data-driven`
-> Sau đó: `@momtest "Công cụ dự báo doanh thu bằng AI"`
+> `/build-persona CFO công ty SaaS 50 người, Singapore, data-driven`
+> Sau đó: `/momtest "Công cụ dự báo doanh thu bằng AI"`
 > PersonaTwin sẽ phản hồi với các phản đối về ROI/TCO và tham chiếu đến công cụ hiện có như HubSpot.
 
 ---
@@ -91,10 +81,10 @@ PersonaTwin tự động phát hiện khi pitch của bạn chứa các lỗi PM
 
 Kiểm thử cùng một tính năng với nhiều persona để xác nhận phân khúc thị trường:
 
-1. `@build-persona Chủ quán cafe trẻ, 28 tuổi, rành công nghệ`
-2. `@momtest "Hệ thống hóa đơn điện tử"` — ghi nhận phản ứng
-3. `@build-persona Chủ tiệm thuốc, 55 tuổi, truyền thống, Hà Nội`
-4. `@momtest "Hệ thống hóa đơn điện tử"` — so sánh phản ứng
+1. `/build-persona Chủ quán cafe trẻ, 28 tuổi, rành công nghệ`
+2. `/momtest "Hệ thống hóa đơn điện tử"` — ghi nhận phản ứng
+3. `/build-persona Chủ tiệm thuốc, 55 tuổi, truyền thống, Hà Nội`
+4. `/momtest "Hệ thống hóa đơn điện tử"` — so sánh phản ứng
 
 Khi hai persona phản ứng rất khác nhau, bạn đã phát hiện **ranh giới phân khúc**. Xem [multi_persona_demo.md](examples/multi_persona_demo.md) để xem ví dụ đầy đủ.
 

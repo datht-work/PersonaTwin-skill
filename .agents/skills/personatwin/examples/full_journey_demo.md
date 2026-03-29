@@ -5,7 +5,7 @@
 
 ---
 
-## Step 1: Data Ingestion (`@summarize`)
+## Step 1: Data Ingestion (`/summarize`)
 
 **PM Input**:
 *"I talked to a small cafe owner. They said my digital menu idea is 'amazing' and they 'love the design.' They currently use a chalk board and a printed QR code that links to a PDF. They mentioned it's hard to update prices daily."*
@@ -41,9 +41,9 @@
 
 ---
 
-## Step 2: Persona Building (`@build-persona`)
+## Step 2: Persona Building (`/build-persona`)
 
-**PM Input**: `@build-persona Cafe Owner, 30s, Ho Chi Minh City, tech-forward`
+**PM Input**: `/build-persona Cafe Owner, 30s, Ho Chi Minh City, tech-forward`
 
 **PersonaTwin Output**:
 
@@ -66,7 +66,7 @@
 
 ---
 
-## Step 3: Simulation Mode (`@momtest`)
+## Step 3: Simulation Mode (`/momtest`)
 
 **PM Pitch**: *"Minh, I want to build a system where you can update prices in an app and it updates the QR menu instantly. It also sends a push notification to your customers."*
 
