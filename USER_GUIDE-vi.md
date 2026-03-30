@@ -21,6 +21,7 @@ Vì PersonaTwin là một AI skill, cách gọi lệnh sẽ phụ thuộc vào m
 | `@build-persona [thông tin]` | **Xây dựng Persona**: Tạo một người dùng ảo chi tiết dựa trên khung 5P Framework. |
 | `@momtest [ý tưởng/tính năng]` | **Kiểm thử Mom Test**: Đưa ý tưởng ra trước Persona để nhận phản hồi "phũ phàng" và trung thực. |
 | `@summarize [nội dung]` | **Lọc sự thật (Truth Filter)**: Trích xuất các nỗi đau (Pains) và hành vi thực tế từ bản ghi phỏng vấn. |
+| `@final-summary` | **Báo cáo tổng kết**: Tạo bảng tổng hợp cuối phiên với tất cả các verdict, phát hiện và khuyến nghị chiến lược. |
 | `@safeai lang [Ngôn ngữ]` | **Đa ngôn ngữ**: Chuyển đổi ngôn ngữ phản hồi (mặc định tự nhận diện). |
 
 ---
@@ -87,6 +88,64 @@ PersonaTwin tự động phát hiện khi pitch của bạn chứa các lỗi PM
 
 ---
 
+## 🌏 5. Ngữ cảnh Quốc gia / Khu vực (Hướng dẫn từng bước)
+
+PersonaTwin có khả năng tải các quy tắc hành vi theo quốc gia và khu vực để giúp persona của bạn chính xác với thị trường địa phương. Mỗi nước có công cụ khác nhau, tín hiệu tin tưởng riêng, và độ nhạy cảm với giá cả rất khác nhau.
+
+### Bước 1: Chỉ định Quốc gia / Khu vực trong `@build-persona`
+
+Thêm thông tin địa lý vào nhân khẩu học của persona:
+
+> `@build-persona Chủ tiệm ăn, 40 tuổi, Việt Nam, F&B, ít rành công nghệ`
+> `@build-persona CFO công ty SaaS 50 người, 45 tuổi, Singapore, data-driven`
+> `@build-persona Quản lý hiệu thuốc, 50 tuổi, Đức, FinTech-adjacent`
+
+### Bước 2: PersonaTwin tải quy tắc Khu vực
+
+Ngữ cảnh khu vực được tự động áp dụng:
+
+| Khu vực | Hành vi chính được tải |
+|---------|----------------------|
+| **Việt Nam 🇻🇳** | Công cụ Zalo-first, nhạy giá cao, tin tưởng qua giới thiệu bạn bè, chuyển từ tiền mặt sang digital |
+| **Đông Nam Á 🌏** | Super-app chiếm ưu thế (Grab/Shopee), ví điện tử địa phương, luật lệ phân mảnh theo từng nước |
+| **Mỹ 🇺🇸** | Sẵn sàng trả tiền nếu ROI rõ ràng, yêu cầu SOC2/tuân thủ, mua hàng nhiều bên tham gia |
+| **Châu Âu 🇪🇺** | GDPR-first, chủ quyền dữ liệu là then chốt, pháp lý kiểm tra mất 6-12 tuần |
+
+### Bước 3: Chạy `@momtest` — Phản hồi theo Khu vực
+
+Simulation sẽ bao gồm các phản đối và công cụ đặc thù theo khu vực:
+
+> `@momtest "Bảng analytics cho đội ngũ kinh doanh của bạn"`
+>
+> — Persona **Việt Nam**: *"Giá bao nhiêu? 500 nghìn/tháng? Nhiều quá. Giờ team tôi chỉ dùng Zalo để báo target hàng ngày."*
+> — Persona **Singapore**: *"Có chứng chỉ SOC2 chưa? Lấy đưa cho team compliance chúng tôi xem trước khi thử."*
+
+### Bước 4: Chạy nhiều quốc gia để so sánh thị trường
+
+Test cùng một ý tưởng qua nhiều khu vực để tìm thị trường phù hợp nhất:
+
+1. `@build-persona Chủ quán cafe, 32 tuổi, TP. Hồ Chí Minh, Việt Nam`
+2. `@momtest "Một ứng dụng tích điểm cho quán cafe của bạn"`
+3. `@build-persona Chủ quán cafe, 32 tuổi, Bangkok, Thái Lan`
+4. `@momtest "Một ứng dụng tích điểm cho quán cafe của bạn"`
+5. `@build-persona Chủ quán cafe, 32 tuổi, Jakarta, Indonesia`
+6. `@momtest "Một ứng dụng tích điểm cho quán cafe của bạn"`
+
+### Bước 5: Tạo bảng Tổng kết cuối
+
+Sau khi test xong tất cả các khu vực, dùng `@final-summary` để tổng hợp:
+
+> `@final-summary`
+
+PersonaTwin sẽ xuất ra một **Bảng Tổng kết Validation** bao gồm:
+
+- Pain Alignment theo từng persona/khu vực
+- Switching Cost & Commitment Signal
+- Verdict: Accept / Pivot / Reject cho từng khu vực
+- Khúyến nghị Chiến lược: nên ưu tiên thị trường nào
+
+---
+
 ## 🔵 4. Nâng cao: So sánh Multi-Persona
 
 Kiểm thử cùng một tính năng với nhiều persona để xác nhận phân khúc thị trường:
@@ -128,4 +187,4 @@ Lệnh này chạy `promptfoo` với 8 test cases kiểm tra: No Compliment, Sta
 - **Cam kết > Quan tâm**: "Nghe hay đấy" không có ý nghĩa gì. "Tôi sẽ trả $20/tháng" có ý nghĩa. "Tôi đã trả $20/tháng cho một giải pháp nửa vời" mới là tất cả.
 
 ---
-<small>Được cung cấp bởi PersonaTwin Team · Phiên bản 2.0.0 · Tháng 3/2026</small>
+<small>Được cung cấp bởi PersonaTwin Team · Phiên bản 2.1.0 · Tháng 3/2026</small>

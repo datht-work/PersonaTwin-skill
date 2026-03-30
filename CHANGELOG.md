@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.0] - 2026-03-30
+
+### Added
+
+- **Regional Context Rules**: Added `knowledge/regional_context.md` covering behavior for Vietnam, Southeast Asia, USA, and Europe markets, including local tools and compliance requirements.
+- **`@final-summary` Command**: Added a new command to generate a structured end-of-session validation summary table, consolidating findings across multiple personas.
+- **Embedded Agent Knowledge**: The IDE agent version of `SKILL.md` (in `.agents/skills/personatwin/`) is now fully self-contained with embedded rules to resolve pathing issues during agent loading.
+- **Regional Workflow Guides**: Added advanced workflow instructions for country-specific market validation testing in English and Vietnamese User Guides.
+
 ## [2.0.0] - 2026-03-29
 
 ### Added

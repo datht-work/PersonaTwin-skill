@@ -21,6 +21,7 @@ Since PersonaTwin is an AI skill, how you run it depends on your environment:
 | `@build-persona [info]` | **Build Persona**: Create a high-fidelity synthetic user using the 5P Framework. |
 | `@momtest [idea/feature]` | **Mom Test Simulation**: Pit your idea against the persona for ruthless, honest feedback. |
 | `@summarize [content]` | **Truth Filter**: Extract real-world pains and behaviors from interview transcripts. |
+| `@final-summary` | **Validation Report**: Generate an end-of-session summary table with all verdicts, findings, and strategic recommendations. |
 | `@safeai lang [Language]` | **Multilingual**: Switch response language (defaults to auto-detection). |
 
 ---
@@ -87,6 +88,64 @@ PersonaTwin automatically detects when your pitch contains common PM mistakes:
 
 ---
 
+## 🌏 5. Regional & Country Context (Step-by-Step)
+
+PersonaTwin can load country- and region-specific behavior overlays to make your personas realistic for local markets. Different countries have different tools, trust signals, and price sensitivities.
+
+### Step 1: Specify Country or Region in `@build-persona`
+
+Add the country or region to your persona demographics:
+
+> `@build-persona SME Owner, 40, Vietnam, F&B, not tech-savvy`
+> `@build-persona CFO, 45, Singapore, SaaS B2B, data-driven`
+> `@build-persona Pharmacy manager, 50, Germany, FinTech-adjacent`
+
+### Step 2: PersonaTwin Loads Regional Rules
+
+Regional context is automatically applied:
+
+| Region | Key Behavior Loaded |
+|--------|--------------------|
+| **Vietnam 🇻🇳** | Zalo-first tools, extreme price sensitivity, peer-referral trust, cash-to-digital context |
+| **Southeast Asia 🌏** | Super-app dominance, local e-wallets, fragmented regulations per country |
+| **USA 🇺🇸** | High willingness-to-pay if ROI proven, SOC2/compliance expected, multi-stakeholder buying |
+| **Europe 🇪🇺** | GDPR-first, data localization critical, 6-12 week legal review for new tools |
+
+### Step 3: Run `@momtest` — Region-Aware Feedback
+
+The simulation will now include regional-specific objections and tool references:
+
+> `@momtest "A SaaS analytics dashboard for your sales team"`
+>
+> — A **Vietnam** persona might respond: *"How much? 500 nghìn/tháng? That's too much. Our team just uses Zalo polls to track daily targets."*
+> — A **Singapore** persona might respond: *"Is this SOC2 certified? Our compliance team needs to sign off before we trial anything that touches revenue data."*
+
+### Step 4: Run Multiple Countries for Market Validation
+
+Test the same idea across regions to find your best-fit market:
+
+1. `@build-persona Cafe Owner, 32, Ho Chi Minh City, Vietnam`
+2. `@momtest "A digital loyalty app for your cafe"`
+3. `@build-persona Cafe Owner, 32, Bangkok, Thailand`
+4. `@momtest "A digital loyalty app for your cafe"`
+5. `@build-persona Cafe Owner, 32, Jakarta, Indonesia`
+6. `@momtest "A digital loyalty app for your cafe"`
+
+### Step 5: Generate Final Summary Table
+
+After testing all regions, use `@final-summary` to consolidate:
+
+> `@final-summary`
+
+PersonaTwin will output a **Validation Summary Table** showing:
+
+- Pain Alignment per persona/region
+- Switching Cost & Commitment Signal
+- Accept / Pivot / Reject verdicts
+- Strategic Recommendation: which market to prioritize
+
+---
+
 ## 🔵 4. Advanced: Multi-Persona Comparison
 
 Test the same feature against multiple personas to validate market segments:
@@ -128,4 +187,4 @@ This runs `promptfoo` with 8 test cases checking: No Compliment, Status Quo Anch
 - **Commitment > Interest**: "That sounds nice" means nothing. "I'd pay $20/month" means something. "I already paid $20/month for a half-solution" means everything.
 
 ---
-<small>Powered by PersonaTwin Team · Version 2.0.0 · March 2026</small>
+<small>Powered by PersonaTwin Team · Version 2.1.0 · March 2026</small>
