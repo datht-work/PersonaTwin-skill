@@ -55,3 +55,53 @@
     8. **Key Objection**: "Our legal team needs to review any third-party tool that touches customer data. That usually takes 6-12 weeks."
   </logic>
 </rule>
+
+<rule id="region-japan-korea">
+  <logic>
+    1. **Region**: Japan 🇯🇵 / South Korea 🇰🇷
+    2. **Macro Context**: High-trust, consensus-driven societies. Technology adoption is cautious but thorough. Quality and reliability trump innovation speed.
+    3. **Default Tools (Japan)**: Fax machines still in use in many SMEs. LINE for business communication. Hanko (personal seal) still required for contracts. Kintone, Cybozu, Salesforce Japan.
+    4. **Default Tools (Korea)**: KakaoTalk dominant for all communication. Naver ecosystem for search/maps/payments. KakaoPay, Samsung Pay. Chaebols control much B2B procurement.
+    5. **Price Sensitivity**: Medium. Will pay for quality and reliability. Will NOT pay for anything that breaks or has poor support. Annual contracts preferred over monthly.
+    6. **Decision Process (Japan)**: *Nemawashi* — consensus-building before any decision. Even if the technical champion loves the product, 5+ stakeholders must agree. Process takes 3-12 months minimum.
+    7. **Decision Process (Korea)**: Hierarchical but faster than Japan. Decision often made by senior leader. Young employees cannot adopt without explicit top-down approval.
+    8. **Trust Signals**: Local partner / reseller presence is essential. "Do you have a Japanese/Korean office?" is a common gating question. Translation of all materials (not just UI) into local language required.
+    9. **Key Objection (Japan)**: "We've been using the current system for 12 years. The team knows it. Changing means 6 months of training, and mistakes during transition could affect customers."
+    10. **Key Objection (Korea)**: "Our CTO needs to approve all new SaaS tools. He'll want to know: Is there a Korean support team? What's the SLA for critical issues?"
+  </logic>
+</rule>
+
+<rule id="region-latam">
+  <logic>
+    1. **Region**: Latin America 🌎 — Covers Brazil, Mexico, Colombia, Argentina, Chile, Peru.
+    2. **Macro Context**: High-growth emerging markets, mobile-first, high inflationary environments (especially AR), strong gig economy, significant cash economy transitioning to digital.
+    3. **Default Tools**: WhatsApp for ALL business communication (most critical tool in LATAM). Mercado Libre / Mercado Pago for e-commerce and payments. PIX (Brazil) for instant transfers. OXXO Pay (Mexico) for cash-to-digital.
+    4. **Price Sensitivity**: Very high, especially in Argentina/Peru. Economic instability means buyers lock in USD-denominated contracts to hedge inflation. Free tier or freemium is near-mandatory for initial adoption.
+    5. **Country Nuances**:
+       - **Brazil 🇧🇷**: Portuguese (NOT Spanish). PIX instant payments. Complex tax system (NF-e/NFSe). Largest market. WhatsApp penetration near 100%.
+       - **Mexico 🇲🇽**: OXXO cash payments critical. US proximity = more B2B SaaS sophistication. SAT tax authority compliance needed.
+       - **Colombia/Peru/Chile/Argentina**: Spanish. Argentina has ARS currency instability; USD pricing preferred. Chile = most sophisticated buyer; Argentina = most price-sensitive.
+    6. **Trust Signals**: Local case studies ("Empresa X in São Paulo uses this") > global logos. Personal relationships (warm intros) open doors faster than cold outreach.
+    7. **Key Objection**: "Does this work with WhatsApp? Can I issue an NF-e from this? Is the support team available in Portuguese/Spanish?"
+    8. **Regulatory Awareness**: LGPD (Brazil, similar to GDPR), SAT compliance (Mexico), locally hosted data increasingly required.
+  </logic>
+</rule>
+
+<rule id="region-africa-middle-east">
+  <logic>
+    1. **Region**: Africa / Middle East (AME) 🌍🌙 — Covers UAE, Saudi Arabia, Egypt, Nigeria, Kenya, South Africa.
+    2. **Macro Context**: Youngest population globally (Africa). Rapid mobile money adoption. Oil-funded mega-projects (Gulf). High variance between ultra-rich (UAE/KSA) and underbanked (Nigeria/Kenya).
+    3. **Default Tools**:
+       - **Gulf (UAE/KSA)**: WhatsApp Business, Microsoft 365, SAP S/4HANA, local ERP. Government mandated tools (Bayanat, Fatoorah in KSA).
+       - **Nigeria/Kenya**: M-Pesa (Kenya) for mobile money. USSD for feature phone users. Flutterwave/Paystack for payments. WhatsApp + phone calls for SME ops.
+       - **South Africa**: Strong banking infrastructure. Standard Bank, FNB apps dominant. Load shedding (power outages) means offline-first capability critical.
+    4. **Price Sensitivity**:
+       - Gulf: Low price sensitivity for enterprise; high value on prestige and "enterprise grade." Government buyers have large budgets but complex procurement.
+       - Africa (Nigeria/Kenya): Extremely price-sensitive. Mobile-first pay-as-you-go pricing beats annual subscriptions. Must support feature phones or low-end Android.
+    5. **Trust Signals (Gulf)**: Government endorsement / local partner / Arabic localization. "Is it certified by [UAE TDRA / Saudi CITC]?" is a common gating question.
+    6. **Trust Signals (Africa)**: Works on 2G/3G and offline. Supported by a trusted local NGO, bank, or telecom (Safaricom, MTN, Airtel).
+    7. **Key Objection (Gulf)**: "Is there an Arabic interface? Are you compliant with Vision 2030 data requirements? Do you have a local data center in KSA/UAE?"
+    8. **Key Objection (Africa)**: "Will this work if the internet goes down? Can my agents use this on a basic smartphone? Is it free to start?"
+    9. **Regulatory Awareness**: KSA PDPL, UAE PDPL, NDPR (Nigeria), Kenya Data Protection Act. Multiple overlapping jurisdictions for cross-border ops.
+  </logic>
+</rule>

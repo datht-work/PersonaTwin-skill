@@ -6,7 +6,7 @@
 **Kỹ năng AI cung cấp môi trường "giả lập người dùng" (synthetic user testing). PersonaTwin áp dụng nghiêm ngặt nguyên lý "The Mom Test" để tạo ra các phản hồi thực tế và "phũ phàng" nhất — giúp bảo vệ toàn bộ Đội ngũ Phát triển Sản phẩm (Biz, PM, PO, và UI/UX) khỏi thiên kiến cá nhân và ngăn lãng phí nguồn lực lập trình.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-2.1.0-blue.svg)](SKILL.md)
+[![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](SKILL.md)
 [![Testing: promptfoo](https://img.shields.io/badge/testing-promptfoo-orange.svg)](tests/promptfooconfig.yaml)
 [![Standard: SKILL.md](https://img.shields.io/badge/standard-SKILL.md-purple.svg)](SKILL.md)
 
@@ -19,7 +19,7 @@ Xây dựng một sản phẩm mà khách hàng thực sự chi tiền là việ
 - **📈 Khối Kinh doanh & Chiến lược (Biz)**: Kiểm chứng nhu cầu thị trường và mức độ sẵn sàng trả tiền (WTP) *trước khi* cấp ngân sách. Ngăn công ty đốt tiền vào các tính năng "có thì vui" nhưng không đem lại doanh thu.
 - **🧠 Product Managers (PM) & Owners (PO)**: Ưu tiên Backlog dựa trên bằng chứng về nỗi đau thực tế thay vì những câu "có lẽ tôi sẽ dùng" đầy rủi ro. Xuất ngay Bảng Điểm Chiến lược bằng lệnh `@final-summary`.
 - **🎨 Đội ngũ UI/UX Design**: Phát hiện sớm các điểm nghẽn (friction) trong luồng thao tác. Kiểm thử tính năng với persona có "trình độ công nghệ kém" (ví dụ: Chủ tiệm thuốc truyền thống) để xem chi phí học hỏi giao diện mới (learning curve) có quá cao hay không.
-- **🌍 Mở Rộng Thị Trường (Mới ở v2.1)**: Giả lập bối cảnh văn hóa địa phương (VD: Thói quen xài Zalo ở Việt Nam vs. Luật GDPR ở Châu Âu) để đánh giá mức độ phù hợp thị trường (Product-Market Fit) của tính năng.
+- **🌍 Mở Rộng Thị Trường**: Giả lập bối cảnh văn hóa địa phương (VD: Thói quen xài Zalo ở Việt Nam vs. Luật GDPR ở Châu Âu) để đánh giá mức độ phù hợp thị trường (Product-Market Fit) của tính năng.
 - **🚫 Triệt tiêu Sự Khách sáo**: Tự động chặn màng lọc các lời khen vô bổ như "Ý tưởng hay đấy!" để nhìn thấu hành vi thật.
 
 ---
@@ -109,6 +109,7 @@ npx skills add datht-work/personatwin-skill
 ## 🌐 Tương thích
 
 PersonaTwin hoàn toàn tuân thủ **SKILL.md Open Standard**, sử dụng trên:
+
 - **Claude Code** (Anthropic)
 - **Cursor** / **Windsurf** / **Copilot** (AI Code Editors)
 - Các cấu hình trình giả lập **Web** (ChatGPT / Claude Web UIs)
@@ -119,10 +120,34 @@ PersonaTwin hoàn toàn tuân thủ **SKILL.md Open Standard**, sử dụng trê
 
 | Phiên bản | Ngày | Điểm nổi bật |
 | --- | --- | --- |
+| **v3.0.0** | 01/04/2026 | **Mở Rộng Chiến Lược**. 4 ngành mới (Y tế, Bất động sản, Logistics, Nông nghiệp). 3 region mới (NHẬT\/HÀN, LATAM, CHÂU PHI\/TRUNG ĐÔNG). Lệnh `@interview-plan`, `@learning-log`. GitHub CI. 20 test cases. |
+| **v2.3.0** | 01/04/2026 | **Coaching & Intelligence**. Lệnh `@coach`, `@dig-deeper`, phân loại Early Adopter, Customer Slicing. Attribution Rob Fitzpatrick. |
+| **v2.2.0** | 01/04/2026 | **Tuân thủ Mom Test++**. Bộ phân loại Bad Data. Khung Commitment & Advancement. Chiến thuật Đào sâu. 12 test cases. |
 | **v2.1.0** | 30/03/2026 | **Phiên bản Prod**. Thêm Regional Context Rules, lệnh `@final-summary` báo cáo chiến lược, module Agent nhúng độc lập. |
 | **v2.0.0** | 29/03/2026 | **Bản Upgrade Chính**. Tuân chuẩn SKILL.md. Expand gấp x4 lần lõi Knowledge phân tách. Thêm quy trình test x8 promptfoo. |
 | **v1.3.0** | 27/03/2026 | **Quy chuẩn hóa Open-Source**. Thêm License, Changelog, file rule Contributor. |
 | **v1.2.0** | 27/03/2026 | **Hoàn thiện CaseStudy**. Bản Demo hành trình từ thu thập đến báo cáo. Khắc phục lỗi chuẩn markdown linter. |
+
+---
+
+## 📚 Nền Tảng Tri Thức
+
+PersonaTwin được xây dựng dựa trên phương pháp luận trong cuốn sách **"The Mom Test"** của tác giả **Rob Fitzpatrick**.
+
+> *"The Mom Test là bộ quy tắc đơn giản giúp tạo ra những câu hỏi tốt — tốt đến mức người thân của bạn cũng không thể nói dối bạn được."*
+> — Rob Fitzpatrick
+
+The Mom Test dạy các startup và đội nhóm sản phẩm cách nói chuyện với khách hàng và khám phá xem liệu ý tưởng sản phẩm có tốt hay không — ngay cả khi mọi người đang nói dối để giữ lịch sự. Đây là cuốn sảch nền tảng bắt buộc cho bất kỳ ai làm product.
+
+| | |
+|:---|:---|
+| **Sách** | [The Mom Test](https://www.momtestbook.com/) — Rob Fitzpatrick |
+| **Mua bản In** | [Amazon (geni.us/momtest)](https://geni.us/momtest) |
+| **Mua bản PDF** | [Gumroad](https://gumroad.com/l/momtest) |
+| **Khóa học Online** | [Practical Customer Development trên Udemy](https://www.udemy.com/practical-customer-development/) |
+| **Tác giả** | [robfitz.com](http://robfitz.com/) |
+
+> **Tuyên bố minh bạch:** PersonaTwin là một AI skill độc lập được **truyền cảm hứng từ** phương pháp luận của The Mom Test. Không có bất kỳ liên kết chính thức nào với Rob Fitzpatrick hoặc các ấn phẩm của ông. Chúng tôi trân trọng mạnh mẽ việc bạn đọc nguyên tác — cuốn sách gốc sâu sắc hơn bất kỳ mô phỏng nào rất nhiều.
 
 ---
 
@@ -132,4 +157,4 @@ Cấp phép mã nguồn mở MIT License — xem [LICENSE](LICENSE) để biết
 
 > ⚠️ **Lưu ý Giới hạn:** Kỹ năng này cung cấp các phân tích mô phỏng đẳng cấp để tiết kiệm chi phí làm sản phẩm và tinh chỉnh hướng đi kinh doanh. Đây *KHÔNG* phải là phương án thay thế việc phỏng vấn con người và người dùng mua hàng thực tế ngoài đời.
 
-*Được xây dựng với ❤️ bởi PersonaTwin Team · Phiên bản 2.1.0 · Tháng 03/2026*
+*Được xây dựng với ❤️ bởi PersonaTwin Team · Phiên bản 3.0.0 · Tháng 04/2026*

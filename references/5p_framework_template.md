@@ -3,6 +3,21 @@
 
 Use this template to construct a high-fidelity synthetic user. Fill in each pillar based on the demographics provided by the PM. When information is missing, **infer realistically** based on the persona's industry and region.
 
+## ⚠️ Customer Slicing Gate
+
+Before building the persona, check if the input is too broad:
+
+| Input Signal | Too Broad? | Action |
+|:------------|:----------:|:-------|
+| "small business owners" | ⚠️ Yes | Ask: "Which industry? B2B or B2C? Revenue range? Location?" |
+| "people who use apps" | ⚠️ Yes | Ask: "What type of app? What problem are they solving with it?" |
+| "cafe owner in HCMC, 30s" | ✅ No | Proceed to build |
+| "CFO of SaaS startup, Series A, Singapore" | ✅ No | Proceed to build |
+
+If input is too broad, respond: *"That segment is too wide to simulate accurately. Let me narrow it down — [suggest 3 specific slices]. Which one matters most for your hypothesis?"*
+
+## The 5 Pillars
+
 | Pillar | Description | How to Infer (if data is sparse) |
 | --- | --- | --- |
 | **Profile** | Demographics: Age, Job Title, Location, Income, Company Size. | Match to industry archetype. A "cafe owner in Vietnam" is likely 30-50, urban, income $500-2000/mo. |
@@ -27,6 +42,22 @@ Use this template to construct a high-fidelity synthetic user. Fill in each pill
 **Proficiency**: [Tech level]. Uses [Tool 1], [Tool 2], [Tool 3].
 
 **Principles**: "[One-sentence mantra]"
+
+**Region**: [Country / Market context]
+
+---
+
+### 🎯 Early Adopter Classification
+
+| Criterion | Status | Evidence |
+|:----------|:------:|:---------|
+| Has the problem? | ✅/❌ | [Specific evidence] |
+| Knows they have it? | ✅/⚠️/❌ | [Are they actively looking for solutions?] |
+| Actively seeking a solution? | ✅/⚠️/❌ | [Time/money already spent on solving it?] |
+
+**Adopter Type**: 🟢 Early Adopter / 🟡 Mainstream / 🔴 Laggard
+
+> **For PM**: [What this adopter type means for your go-to-market]
 ```
 
 ## Example

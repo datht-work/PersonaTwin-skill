@@ -18,10 +18,12 @@ Since PersonaTwin is an AI skill, how you run it depends on your environment:
 
 | Command | Action / Behavior |
 |---|---|
-| `@build-persona [info]` | **Build Persona**: Create a high-fidelity synthetic user using the 5P Framework. |
-| `@momtest [idea/feature]` | **Mom Test Simulation**: Pit your idea against the persona for ruthless, honest feedback. |
-| `@summarize [content]` | **Truth Filter**: Extract real-world pains and behaviors from interview transcripts. |
-| `@final-summary` | **Validation Report**: Generate an end-of-session summary table with all verdicts, findings, and strategic recommendations. |
+| `@build-persona [info]` | **Build Persona**: Create a 5P persona with Customer Slicing guidance + Early Adopter classification. |
+| `@momtest [idea/feature]` | **Mom Test Simulation**: Pit your idea against the persona for ruthless feedback + Commitment Score. |
+| `@summarize [content]` | **Truth Filter**: Extract behaviors from transcripts. Types all bad data: Compliments, Fluff, Hypotheticals. Flags Idea Signals. |
+| `@coach [questions]` | **Interview Coach**: Submit your planned interview questions. Get a Pass/Fail scorecard + rewrites. |
+| `@dig-deeper` | **Root Cause Excavation**: Continue drilling after `@momtest` surfaces a pain signal. 5-Whys depth. |
+| `@final-summary` | **Validation Report**: End-of-session summary with verdicts, findings, and strategic recommendations. |
 | `@safeai lang [Language]` | **Multilingual**: Switch response language (defaults to auto-detection). |
 
 ---
@@ -88,7 +90,7 @@ PersonaTwin automatically detects when your pitch contains common PM mistakes:
 
 ---
 
-## 🌏 5. Regional & Country Context (Step-by-Step)
+## 🌏 3. Regional & Country Context (Step-by-Step)
 
 PersonaTwin can load country- and region-specific behavior overlays to make your personas realistic for local markets. Different countries have different tools, trust signals, and price sensitivities.
 
@@ -175,16 +177,57 @@ If you are an AI engineer, you can run the test suite to ensure the persona stay
 npm run test
 ```
 
-This runs `promptfoo` with 8 test cases checking: No Compliment, Status Quo Anchor, Past Tense Focus, Commitment Test, Brevity, Anti-Feature-Dump, SaaS Consistency, and Language Switch.
+This runs `promptfoo` with **20 test cases** checking: No Compliment, Status Quo Anchor, Past Tense Focus, Commitment Test, Brevity, Anti-Feature-Dump, SaaS Consistency, Language Switch, Truth Filter, Fluff Detection, Regional Context, Escalation Logic, Healthcare Vertical, Logistics Vertical, AgTech Vertical, Japan/Korea Region, LATAM Region, Bad Data Ideas, @interview-plan Format, and @learning-log Theme Organization.
 
 ---
 
-## ⚠️ 6. Important Notes
+## 🟢 7. Phase 2 Commands: Coaching & Deep Research
 
-- **Never Trust Compliments**: PersonaTwin is designed to **never compliment** your idea. If it does, check the `knowledge/mom_test_rules.md` configuration.
-- **Focus on the Past**: Always ask about what has happened, not the future ("Would you..." is the wrong question).
+### `@coach` — Interview Question Grader
+
+Use **before** your real customer interviews. Submit your planned questions and get a Mom Test scorecard.
+
+**When to use**: You have a list of interview questions and want to catch bias before you contaminate your data.
+
+```
+@coach
+Persona: [target segment]
+My planned questions:
+1. [Question 1]
+2. [Question 2]
+3. [Question 3]
+```
+
+**Output**: PersonaTwin grades each question as ✅ Pass / ⚠️ Risky / ❌ Fail, explains *why* it fails the Mom Test, and rewrites it into a valid version. Includes a readiness verdict and the single biggest risk in your current question set.
+
+> See [examples/coach\_dig\_deeper\_demo.md](examples/coach_dig_deeper_demo.md) for a full worked example.
+
+---
+
+### `@dig-deeper` — Root Cause Excavation
+
+Use **immediately after** `@momtest` when the persona reveals an interesting pain signal. Drill down to root cause using Digging techniques and a 5-Whys chain.
+
+**When to use**: The persona said something like *"Yeah, that's annoying, I lost a customer last month because…"* and you want to understand the depth and root of that pain.
+
+```
+@momtest "A price sync tool for delivery platforms"
+... [persona reveals a pain about 60-minute manual updates] ...
+@dig-deeper
+```
+
+**Output**: PersonaTwin runs 3-4 rounds of digging questions, then synthesizes a Root Cause Summary table showing surface complaint → real behavior → root cause → workaround → cost of inaction. Ends with a PM implication and a prototype test suggestion.
+
+---
+
+## ⚠️ 8. Important Notes
+
+- **Never Trust Compliments**: PersonaTwin never compliments your idea. If it does, check `knowledge/mom_test_rules.md`.
+- **3 Types of Bad Data to Ignore**: Compliments, Fluff (generic claims), and Ideas (feature suggestions). All three corrupt your signal.
+- **Focus on the Past**: Always ask about what has happened. "Would you..." is the wrong question every time.
 - **Status Quo is the Competition**: The biggest competitor is never another product — it's doing nothing (or using Excel).
-- **Commitment > Interest**: "That sounds nice" means nothing. "I'd pay $20/month" means something. "I already paid $20/month for a half-solution" means everything.
+- **Commitment > Interest**: "That sounds nice" = 0. "I'd pay $20/month" = signal. "I already paid $20 for a broken solution" = gold.
+- **No advancement = learning wasted**: If the conversation ends with "let me think about it," you didn't get a commitment. Push for a next step.
 
 ---
-<small>Powered by PersonaTwin Team · Version 2.1.0 · March 2026</small>
+<small>Powered by PersonaTwin Team · Version 3.0.0 · April 2026</small>
