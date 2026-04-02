@@ -6,6 +6,7 @@
 **Kỹ năng AI cung cấp môi trường "giả lập người dùng" (synthetic user testing). PersonaTwin áp dụng nghiêm ngặt nguyên lý "The Mom Test" để tạo ra các phản hồi thực tế và "phũ phàng" nhất — giúp bảo vệ toàn bộ Đội ngũ Phát triển Sản phẩm (Biz, PM, PO, và UI/UX) khỏi thiên kiến cá nhân và ngăn lãng phí nguồn lực lập trình.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![skills.sh](https://img.shields.io/badge/skills.sh-Listed-blueviolet.svg)](https://skills.sh/datht-work/personatwin-skill)
 [![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](SKILL.md)
 [![Testing: promptfoo](https://img.shields.io/badge/testing-promptfoo-orange.svg)](tests/promptfooconfig.yaml)
 [![Standard: SKILL.md](https://img.shields.io/badge/standard-SKILL.md-purple.svg)](SKILL.md)

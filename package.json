@@ -11,6 +11,14 @@
     "personatwin": "SKILL.md"
   },
   "author": "PersonaTwin Team (datht-work)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/datht-work/PersonaTwin-skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/datht-work/PersonaTwin-skill/issues"
+  },
+  "homepage": "https://skills.sh/datht-work/personatwin-skill",
   "keywords": [
     "product-management",
     "user-testing",
@@ -19,7 +27,8 @@
     "ai-agent",
     "persona-simulation",
     "skill-md",
-    "validation"
+    "validation",
+    "agent-skill"
   ],
   "license": "MIT",
   "devDependencies": {
