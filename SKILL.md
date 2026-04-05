@@ -275,6 +275,72 @@ After generating the 5P Persona Card, classify the adopter type:
 
 Refer to `references/response_format.md` for structured output templates for each command.
 
+### `@interview-plan` → Interview Plan
+
+```
+## 📋 Interview Plan for [Persona Name]
+
+**Target Segment**: [Persona description]
+**Objective**: [Hypothesis being tested]
+
+### ✅ 5 Mom Test–Compliant Questions
+| # | Question | Why It's Valid |
+|---|----------|----------------|
+| 1 | "[Past-tense, behavior-focused question]" | Asks about past behavior |
+| 2 | "[Specificity anchor question]" | Forces concrete example |
+| 3 | "[Status quo question]" | Reveals current workaround |
+| 4 | "[Pain depth question]" | Uncovers cost of the problem |
+| 5 | "[Commitment probe question]" | Tests prior investment in solving it |
+
+### 🔔 Commitment Ask Options (choose ONE)
+- Time: [Schedule 15-min trial with real data]
+- Money: [Ask for deposit / pre-order]
+- Reputation: [Warm intro to someone with same problem]
+
+### ❌ Questions to Avoid
+| Bad Question | Why It Fails | Better Version |
+|---|---|---|
+| "[Hypothetical]" | Future Tense Trap | "[Past-behavior version]" |
+```
+
+### `@learning-log` → Post-Interview Learning Log
+
+```
+## 📓 Learning Log — [Session / Date]
+
+**Personas Interviewed**: [N] | **Product**: [Name] | **Date**: [YYYY-MM-DD]
+
+### 🔍 Themes (by theme, NOT by person)
+#### Theme 1: [Name]
+- **Evidence**: [Persona] — "[Behavior quote]"
+- **Status**: 🟢 Validated / 🟡 Partial / 🔴 Noise
+
+### ✅ Validated Assumptions
+| Assumption | Evidence | Confidence |
+|------------|----------|------------|
+| [What we thought] | "[Proof]" | High/Med/Low |
+
+### ❌ Killed Assumptions
+| Assumption | Why Failed | Action |
+|------------|------------|--------|
+| [Belief] | "[Disproof]" | Drop / Pivot |
+
+### 💡 Idea Signals (investigate root pain)
+| Signal | Source | Root Pain |
+|--------|--------|-----------|
+| "[Feature suggestion]" | [Persona] | "[Underlying problem?]" |
+
+### 🤝 Commitment Signals
+| Persona | Type | Details |
+|---------|------|---------|
+| [Name] | 💰/⏱️/🤝 | "[What they agreed to]" |
+
+### 🎯 Next Action
+- Continue Interviewing? Yes/No
+- Hypothesis to Test Next: [Updated]
+- Best-Signal Segment: [Who]
+```
+
 ## Workflow Diagram
 
 ```mermaid

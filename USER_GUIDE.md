@@ -90,7 +90,7 @@ PersonaTwin automatically detects when your pitch contains common PM mistakes:
 
 ---
 
-## 🌏 3. Regional & Country Context (Step-by-Step)
+## 🌏 4. Regional & Country Context (Step-by-Step)
 
 PersonaTwin can load country- and region-specific behavior overlays to make your personas realistic for local markets. Different countries have different tools, trust signals, and price sensitivities.
 
@@ -181,7 +181,7 @@ This runs `promptfoo` with **20 test cases** checking: No Compliment, Status Quo
 
 ---
 
-## 🟢 7. Phase 2 Commands: Coaching & Deep Research
+## 🟢 6. Phase 2 Commands: Coaching & Deep Research
 
 ### `@coach` — Interview Question Grader
 

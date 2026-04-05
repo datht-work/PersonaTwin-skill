@@ -1,6 +1,6 @@
 {
   "name": "personatwin-skill",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Synthetic User Testing Cloud based on The Mom Test principles. Simulates ruthlessly honest user feedback for product managers using the 5P Framework and industry-aware personas.",
   "main": "SKILL.md",
   "scripts": {

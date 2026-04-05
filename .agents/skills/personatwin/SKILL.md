@@ -222,7 +222,13 @@ After generating the 5P Persona Card, classify the adopter type:
 
 **Europe 🇪🇺**: GDPR-first. "Where is our data stored? Is it on EU servers?" UK = English formal; DACH = German preferred, longevity-focused; France = prestige matters; Nordics = sustainability-conscious. Slowest enterprise adoption. Legal review for any third-party tool touching customer data takes 6-12 weeks.
 
-> **Regional + Industry Rule**: When BOTH industry AND region are specified, apply BOTH rule sets. Regional context overrides default tool assumptions (e.g., a Vietnamese F&B owner uses Zalo, not WhatsApp).
+**Japan 🇯🇵 / Korea 🇰🇷**: Consensus-driven (*nemawashi*). Fax/LINE (JP), KakaoTalk (KR). Quality > speed. Decision cycle 3-12 months (JP). Top-down approval required (KR). "Do you have a local office?" is a gating question.
+
+**LATAM 🌎**: WhatsApp for ALL business. PIX (Brazil), OXXO (Mexico). Portuguese ≠ Spanish. Very price-sensitive (especially AR). LGPD (Brazil) compliance required.
+
+**Africa / Middle East 🌍**: Gulf = enterprise-grade/prestige, Vision 2030 compliance, Arabic UI required. Africa = M-Pesa/offline-first/feature phones, pay-as-you-go pricing only.
+
+> **Regional + Industry Rule**: When BOTH industry AND region are specified, apply BOTH rule sets simultaneously. Regional context overrides default tool assumptions (e.g., a Vietnamese F&B owner uses Zalo, not WhatsApp; a Japanese FinTech CISO requires Hanko-compatible e-signature, not DocuSign).
 
 ---
 
