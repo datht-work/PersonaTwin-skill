@@ -34,27 +34,34 @@ Since PersonaTwin is an AI skill, how you run it depends on your environment:
 *Your app is coded, it has great features, but nobody is using it. The problem? You're targeting the wrong segment. Use this 5-step process to hunt down your lucrative "Niche Market":*
 
 ### Step 1: Audience Slicing
+
 Don't test with the general public. Create 3 wildly different personas within the same vertical.
+
 1. `@build-persona Young Cafe Owner, 28, tech-savvy, Downtown, Vietnam`
 2. `@build-persona Traditional Grocery Owner, 50, Zalo-only, Suburbs, Vietnam`
 3. `@build-persona F&B Chain Manager of 10 locations, cash-flow focused`
 
 ### Step 2: The Core Pitch
+
 Throw the core feature of your existing app at all three personas using `@momtest`:
 > `@momtest "We have a barcode scanning feature on our app that generates an inventory report in 3 seconds."`
 
 ### Step 3: Reading the Switching Cost
+
 PersonaTwin will return their real reactions. You are NOT looking for someone who says "Great app". You are looking for a **Pain Alignment = ✅** AND a **Switching Cost = 🟢 (Low)**.
+
 - *Persona 2 (50yo)* will object: "I just use my notebook. My eyes are too bad for scanning barcodes." (Drop this segment).
 - *Persona 3 (Chain Manager)* will object: "We use Oracle. Can your app bi-directionally sync with our database?" (This segment is too demanding/expensive to acquire right now).
 
 ### Step 4: Digging for Marketing Content
+
 Let's say Persona 1 (Young Cafe Owner) says: "That's okay, at the end of the day my inventory rarely matches my cash register." Drill down immediately:
 > `@dig-deeper`
 
 PersonaTwin will use the 5-Whys technique to uncover that the owner spends 2 hours every night manually cross-referencing Excel sheets. **That is your new Ad Headline!**
 
 ### Step 5: Strategic Consolidation
+
 Run the closing command:
 > `@final-summary`
 
@@ -67,17 +74,20 @@ The system will generate a table declaring: The absolute best target is "Young, 
 *You have a new idea. Don't code it yet. Validate it.*
 
 ### Step 1: Extract Truth from Old Data
+
 If you just grabbed coffee with a user and they praised your idea, feed the transcript to the AI:
 > `@summarize "[Transcript where user praises the idea]"`
 > PersonaTwin will expose it: The user praised it out of politeness, but their actual past behavior shows they've never spent money solving this problem before.
 
 ### Step 2: Prep the Interview Script
+
 To avoid bias when talking to humans, let AI write the script:
 > `@build-persona CFO, 45, B2B SaaS`
 > `@interview-plan`
 > This generates 5 questions anchoring on Past Pain, completely avoiding "Would you buy this?"
 
 ### Step 3: Rehearsal & Grading
+
 If you write your own questions, get them graded:
 > `@coach [Your list of questions]`
 > Get a scorecard highlighting exactly which questions lead the witness.
@@ -85,6 +95,7 @@ If you write your own questions, get them graded:
 ---
 
 ## 🚨 Fixing a "Dead App": Spotting 5 Fatal Anti-Patterns
+
 If your app isn't selling, run `@momtest` and pitch it exactly the way your Sales team does. If the system flags any of these errors, you know why you're failing:
 
 1. **Feature Dumping**: Throwing 5 features at the customer (Persona will snap: "Too confusing, just tell me what helps me.")
@@ -108,6 +119,7 @@ PersonaTwin carries the DNA of **7 regions** and **6 industry verticals**. When 
 | **FinTech 🏦** | `FinTech` | Zero-trust. Demands SOC2 and Pen-test reports before taking a meeting. |
 
 **Example of Cross-Border Testing:**
+
 1. `@build-persona Cafe Owner, 32, Bangkok, Thailand`  → Pitch App.
 2. `@build-persona Cafe Owner, 32, Jakarta, Indonesia` → Pitch App.
 3. `@final-summary` → Identify the friction difference between Thailand and Indo to adjust your pitch.
@@ -120,9 +132,11 @@ If you are an AI engineer integrating this into internal workflows:
 
 1. **Custom Rules**: Inject `Rule: Always assume this user relies heavily on SAP` into the context before running commands.
 2. **Automated Validation**: Benchmark your modifications using Promptfoo.
+
    ```bash
    npm run test
    ```
+
    (Runs 20 test cases covering: Anti-compliment, Hard Commitments, Regional Objections, Past Tense Focus, etc.)
 
 ---
