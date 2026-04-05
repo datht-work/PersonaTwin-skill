@@ -3,7 +3,7 @@
 > 🌍 [English](README.md) | 🇻🇳 [Tiếng Việt](README-vi.md)
 > 📖 [User Guide](USER_GUIDE.md) | 🇻🇳 [Hướng dẫn Sử dụng](USER_GUIDE-vi.md)
 
-**Kỹ năng AI cung cấp môi trường "giả lập người dùng" (synthetic user testing). PersonaTwin áp dụng nghiêm ngặt nguyên lý "The Mom Test" để tạo ra các phản hồi thực tế và "phũ phàng" nhất — giúp bảo vệ toàn bộ Đội ngũ Phát triển Sản phẩm (Biz, PM, PO, và UI/UX) khỏi thiên kiến cá nhân và ngăn lãng phí nguồn lực lập trình.**
+**Bảo vệ Đội ngũ Phát triển Sản phẩm khỏi những "lời khen xã giao" bằng cách giả lập người dùng thực tế và phũ phàng.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![skills.sh](https://img.shields.io/badge/skills.sh-Listed-blueviolet.svg)](https://skills.sh/datht-work/personatwin-skill)
@@ -13,15 +13,33 @@
 
 ---
 
-## 🎯 Giá trị cho Toàn bộ Đội ngũ Sản phẩm (Product Squad)
+## 🛑 Tại sao 90% Tính năng mới đều Thất bại?
 
-Xây dựng một sản phẩm mà khách hàng thực sự chi tiền là việc rất khó vì người dùng hay "nói dối" do cả nể. Chi phí của việc code sai tính năng là vô cùng đắt đỏ. **PersonaTwin** đóng vai trò là "bộ lọc sự thật" để giảm thiểu rủi ro cho từng vị trí dự án:
+Bởi vì khách hàng luôn nói dối để giữ lịch sự. Họ nói *"Ý tưởng tuyệt quá!"*, *"Tôi chắc chắn sẽ dùng!"*... để làm vui lòng bạn. Đội ngũ miệt mài lập trình trong 2 tháng, ra mắt sản phẩm, và... **không một ai móc ví ra trả tiền**.
 
-- **📈 Khối Kinh doanh & Chiến lược (Biz)**: Kiểm chứng nhu cầu thị trường và mức độ sẵn sàng trả tiền (WTP) *trước khi* cấp ngân sách. Ngăn công ty đốt tiền vào các tính năng "có thì vui" nhưng không đem lại doanh thu.
-- **🧠 Product Managers (PM) & Owners (PO)**: Ưu tiên Backlog dựa trên bằng chứng về nỗi đau thực tế thay vì những câu "có lẽ tôi sẽ dùng" đầy rủi ro. Xuất ngay Bảng Điểm Chiến lược bằng lệnh `@final-summary`.
-- **🎨 Đội ngũ UI/UX Design**: Phát hiện sớm các điểm nghẽn (friction) trong luồng thao tác. Kiểm thử tính năng với persona có "trình độ công nghệ kém" (ví dụ: Chủ tiệm thuốc truyền thống) để xem chi phí học hỏi giao diện mới (learning curve) có quá cao hay không.
-- **🌍 Mở Rộng Thị Trường**: Giả lập bối cảnh văn hóa địa phương (VD: Thói quen xài Zalo ở Việt Nam vs. Luật GDPR ở Châu Âu) để đánh giá mức độ phù hợp thị trường (Product-Market Fit) của tính năng.
-- **🚫 Triệt tiêu Sự Khách sáo**: Tự động chặn màng lọc các lời khen vô bổ như "Ý tưởng hay đấy!" để nhìn thấu hành vi thật.
+Đó là cái giá vô cùng đắt đỏ của việc bị đánh lừa bởi những lời khen.
+
+**PersonaTwin** được sinh ra để làm "Chốt chặn sự thật" (Truth Filter). Bằng cách áp dụng nghiêm ngặt nguyên lý **The Mom Test**, hệ thống AI này sẽ bẻ gãy mọi ý tưởng viển vông *trước khi* dòng code đầu tiên được viết ra.
+
+## 🥊 Cú Sốc Thực tế 1 Phút: Khách Xã Giao vs. PersonaTwin
+
+*Pitch ý tưởng: "Em định làm App Tích Điểm bằng QR cho quán cafe của anh."*
+
+| Người dùng thật (Đang làm vui lòng PM) | PersonaTwin (Phũ phàng chuẩn Mom Test) |
+|---|---|
+| *"Tuyệt vời, ý tưởng hay đấy! Thi thoảng khách cũng hỏi thẻ thành viên. Giao diện đẹp thì chắc chắn anh sẽ cho nhân viên dùng thử."* | *"Quán anh buổi sáng đông nghẹt. Quét màn hình QR mất thêm 5 giây mỗi đơn. Em có cách nào làm nhanh hơn anh bấm máy tính không? Nếu không thì anh thà bớt 3 nghìn cho lẹ."* |
+| ❌ Vỗ về cái tôi của bạn.<br>❌ Dùng thì tương lai: "sẽ dùng".<br>❌ Trả về **Dữ liệu Rác (Bad Data)**. | ✅ Chỉ ra chi phí ẩn (Switching cost).<br>✅ Hiện thực phũ phàng (Status quo).<br>✅ Trả về **Tín hiệu Thực tế** để PM nhìn nhận. |
+
+---
+
+## 🎯 Cứu Rỗi Nguồn Lực Cho Toàn Đội
+
+PersonaTwin biến việc "để đó tính sau" thành hành động thực tế ngay trên màn hình làm việc:
+
+- **📈 Khối Kinh doanh & Chiến lược (Biz)**: Kiểm chứng sức mua của thị trường (Willingness-to-pay) *ngay lập tức*. Tránh đốt tiền vào các tính năng "có thì vui" nhưng không đẻ ra tiền.
+- **🧠 Product Managers (PM) & Owners (PO)**: Có bằng chứng giả lập sâu để đập tan các yêu cầu tính năng phi lý dựa trên cảm tính. Lưu lại Nhật ký học hỏi (`@learning-log`) trong 5 giây.
+- **🎨 Đội ngũ UI/UX Design**: Check luồng thao tác bằng một Persona "Mù công nghệ". Nếu Persona nói *"Phức tạp quá, tôi bỏ cuộc"*, bạn biết bản lề của thiết kế đang sai ở đâu.
+- **🌍 Test Product-Market Fit Quốc tế**: Chuyển Persona sang bối cảnh Mỹ (đòi hỏi SOC2 Compliance) hay Nhật (quy trình duyệt Nemawashi) chỉ bằng một câu lệnh.
 
 ---
 

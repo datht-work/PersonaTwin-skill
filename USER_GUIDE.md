@@ -1,6 +1,6 @@
-# PersonaTwin: User Guide (English)
+# PersonaTwin: User Guide & Strategic Playbook
 
-This guide provides a detailed reference on how to use the **PersonaTwin** skill to simulate users and validate product ideas using "The Mom Test" principles.
+This document is not just a command reference; it is a **Strategic Playbook**. You will learn how to use PersonaTwin to: (A) Avoid coding the wrong features, and most importantly, (B) **Find the perfect Product-Market Fit (PMF) for an existing app/product.**
 
 ---
 
@@ -9,225 +9,132 @@ This guide provides a detailed reference on how to use the **PersonaTwin** skill
 Since PersonaTwin is an AI skill, how you run it depends on your environment:
 
 - **AI IDEs (Cursor, Windsurf, Copilot, etc.)**: Tag the agent and use the command (e.g., `@personatwin @build-persona ...`).
-- **CLI Agents (Claude Code, Amp, Cline, etc.)**: Use natural language (e.g., "Use personatwin to `@build-persona`...").
-- **ChatGPT / Claude Web**: Paste the `SKILL.md` file into your chat context and type the command directly (e.g., `@build-persona ...`).
+- **CLI Agents (Claude Code, Cline, etc.)**: Use natural language (e.g., "Use personatwin to `@build-persona`...").
+- **ChatGPT / Claude Web**: Paste the `SKILL.md` file into your chat context and type the command.
 
 ---
 
 ## ⚡ Quick Command Cheat Sheet
 
-| Command | Action / Behavior |
+| Command | Primary Use Case |
 |---|---|
-| `@build-persona [info]` | **Build Persona**: Create a 5P persona with Customer Slicing guidance + Early Adopter classification. |
-| `@momtest [idea/feature]` | **Mom Test Simulation**: Pit your idea against the persona for ruthless feedback + Commitment Score. |
-| `@summarize [content]` | **Truth Filter**: Extract behaviors from transcripts. Types all bad data: Compliments, Fluff, Hypotheticals. Flags Idea Signals. |
-| `@coach [questions]` | **Interview Coach**: Submit your planned interview questions. Get a Pass/Fail scorecard + rewrites. |
-| `@dig-deeper` | **Root Cause Excavation**: Continue drilling after `@momtest` surfaces a pain signal. 5-Whys depth. |
-| `@final-summary` | **Validation Report**: End-of-session summary with verdicts, findings, and strategic recommendations. |
-| `@safeai lang [Language]` | **Multilingual**: Switch response language (defaults to auto-detection). |
+| `@build-persona [info]` | Create a user, classify Early Adopter status. Forces you to slice broad audiences. |
+| `@momtest [idea/app]` | Pitch a feature/app to receive "complex, rejecting, or demanding" feedback. |
+| `@summarize [content]` | Filter the truth from meeting notes. Strips away compliments (Fluff). |
+| `@coach [questions]` | Grade your sales/interview script to catch leading questions. |
+| `@interview-plan` | Auto-generate 5 Mom Test-compliant questions for the active persona. |
+| `@dig-deeper` | Drill down (5-Whys) after `@momtest` finds a scratch to uncover the Root Pain. |
+| `@final-summary` | Consolidate data into a Strategic Dashboard (Drop segment A, target segment B). |
+| `@learning-log` | Post-interview learning log (grouped by theme, not by person). |
 
 ---
 
-## 🟢 1. Core Workflow
+## 🎯 PLAYBOOK 1: Finding the Target Audience for an "Existing App" (Product-Market Fit)
 
-### Step 1: Data Ingestion & Truth Filter
+*Your app is coded, it has great features, but nobody is using it. The problem? You're targeting the wrong segment. Use this 5-step process to hunt down your lucrative "Niche Market":*
 
-Use the `@summarize` command when you have raw interview notes. PersonaTwin will strip away polite compliments and keep only what the user is **currently doing** or **has done**.
+### Step 1: Audience Slicing
+Don't test with the general public. Create 3 wildly different personas within the same vertical.
+1. `@build-persona Young Cafe Owner, 28, tech-savvy, Downtown, Vietnam`
+2. `@build-persona Traditional Grocery Owner, 50, Zalo-only, Suburbs, Vietnam`
+3. `@build-persona F&B Chain Manager of 10 locations, cash-flow focused`
 
-> `@summarize "User says: Your product is great, I would buy it if it had feature X. Currently I use Excel to manage this."`
-> **Output**: PersonaTwin will highlight that "feature X" is just a hypothetical want, while the real behavior is "using Excel."
+### Step 2: The Core Pitch
+Throw the core feature of your existing app at all three personas using `@momtest`:
+> `@momtest "We have a barcode scanning feature on our app that generates an inventory report in 3 seconds."`
 
-### Step 2: Persona Building (5P Framework)
+### Step 3: Reading the Switching Cost
+PersonaTwin will return their real reactions. You are NOT looking for someone who says "Great app". You are looking for a **Pain Alignment = ✅** AND a **Switching Cost = 🟢 (Low)**.
+- *Persona 2 (50yo)* will object: "I just use my notebook. My eyes are too bad for scanning barcodes." (Drop this segment).
+- *Persona 3 (Chain Manager)* will object: "We use Oracle. Can your app bi-directionally sync with our database?" (This segment is too demanding/expensive to acquire right now).
 
-Use the `@build-persona` command to create a synthetic user. Provide basic demographics for better results.
+### Step 4: Digging for Marketing Content
+Let's say Persona 1 (Young Cafe Owner) says: "That's okay, at the end of the day my inventory rarely matches my cash register." Drill down immediately:
+> `@dig-deeper`
 
-> `@build-persona SME Owner in Vietnam, 45 years old, not tech-savvy.`
+PersonaTwin will use the 5-Whys technique to uncover that the owner spends 2 hours every night manually cross-referencing Excel sheets. **That is your new Ad Headline!**
 
-PersonaTwin outputs a structured **Persona Card** with Profile, Psychology, Pains & Gains, Proficiency, and Principles.
-
-### Step 3: Simulation Mode (Mom Test Feedback)
-
-Use the `@momtest` command to test your feature idea.
-
-> `@momtest "I want to build a 5-step digital loyalty app for your shop."`
-> **PersonaTwin**: "I don't have time for 5 steps. I'm busy managing my shop. Right now I just remember my customers' faces and give them a small discount manually."
-
----
-
-## 🟡 2. Industry Presets
-
-PersonaTwin includes pre-configured persona behaviors for 6 industry verticals. When you build a persona from a specific industry, the skill automatically loads the appropriate behavior rules.
-
-| Industry | Persona Mindset | Default Objection Style |
-|----------|----------------|------------------------|
-| **SaaS B2B** | CFO / Ops Manager. ROI-focused. | "What's the TCO? We already pay for HubSpot." |
-| **F&B / Retail** | Shop owner. Cash-flow focused. | "I don't have time to learn new software." |
-| **FinTech** | Risk-averse. Compliance-first. | "Is it compliant? What about the audit?" |
-| **EdTech** | Overworked teacher. Skeptical. | "I've seen 10 apps like this. They all die." |
-| **Consumer App** | End user. 3-second attention span. | "I already have an app for that. Why another one?" |
-| **Security** | CISO. Zero-trust mindset. | "Where is the data stored? Show me the SOC2 report." |
-
-### Example: SaaS B2B Persona
-
-> `@build-persona CFO of a 50-person SaaS startup, Singapore, data-driven`
-> Then: `@momtest "An AI-powered sales forecasting tool"`
-> PersonaTwin will respond with ROI/TCO objections and references to existing tools like HubSpot.
-
----
-
-## 🔴 3. Anti-Pattern Detection
-
-PersonaTwin automatically detects when your pitch contains common PM mistakes:
-
-| Anti-Pattern | What It Looks Like | PersonaTwin Reaction |
-|-------------|-------------------|---------------------|
-| **Feature Dumping** | Listing 3+ features at once | "You lost me at feature #2. Just tell me about the one that helps me." |
-| **Solution First** | Describing a solution without asking about the problem | "Wait — what problem are you solving?" |
-| **Future Tense Trap** | "Would you use this if..." | "I can't tell you what I'd do. But last week I..." |
-| **Vanity Metrics** | "We have 50,000 downloads" | "Downloads mean nothing. How many paid?" |
-| **Competitor Comparison** | "Like Grab but for X" | "I don't use Grab for X. I call Chị Tư." |
-| **Premature Scaling** | "Targeting 10M users in SEA" | "Great. But does it work for MY shop?" |
-
----
-
-## 🌏 4. Regional & Country Context (Step-by-Step)
-
-PersonaTwin can load country- and region-specific behavior overlays to make your personas realistic for local markets. Different countries have different tools, trust signals, and price sensitivities.
-
-### Step 1: Specify Country or Region in `@build-persona`
-
-Add the country or region to your persona demographics:
-
-> `@build-persona SME Owner, 40, Vietnam, F&B, not tech-savvy`
-> `@build-persona CFO, 45, Singapore, SaaS B2B, data-driven`
-> `@build-persona Pharmacy manager, 50, Germany, FinTech-adjacent`
-
-### Step 2: PersonaTwin Loads Regional Rules
-
-Regional context is automatically applied:
-
-| Region | Key Behavior Loaded |
-|--------|--------------------|
-| **Vietnam 🇻🇳** | Zalo-first tools, extreme price sensitivity, peer-referral trust, cash-to-digital context |
-| **Southeast Asia 🌏** | Super-app dominance, local e-wallets, fragmented regulations per country |
-| **USA 🇺🇸** | High willingness-to-pay if ROI proven, SOC2/compliance expected, multi-stakeholder buying |
-| **Europe 🇪🇺** | GDPR-first, data localization critical, 6-12 week legal review for new tools |
-
-### Step 3: Run `@momtest` — Region-Aware Feedback
-
-The simulation will now include regional-specific objections and tool references:
-
-> `@momtest "A SaaS analytics dashboard for your sales team"`
->
-> — A **Vietnam** persona might respond: *"How much? 500 nghìn/tháng? That's too much. Our team just uses Zalo polls to track daily targets."*
-> — A **Singapore** persona might respond: *"Is this SOC2 certified? Our compliance team needs to sign off before we trial anything that touches revenue data."*
-
-### Step 4: Run Multiple Countries for Market Validation
-
-Test the same idea across regions to find your best-fit market:
-
-1. `@build-persona Cafe Owner, 32, Ho Chi Minh City, Vietnam`
-2. `@momtest "A digital loyalty app for your cafe"`
-3. `@build-persona Cafe Owner, 32, Bangkok, Thailand`
-4. `@momtest "A digital loyalty app for your cafe"`
-5. `@build-persona Cafe Owner, 32, Jakarta, Indonesia`
-6. `@momtest "A digital loyalty app for your cafe"`
-
-### Step 5: Generate Final Summary Table
-
-After testing all regions, use `@final-summary` to consolidate:
-
+### Step 5: Strategic Consolidation
+Run the closing command:
 > `@final-summary`
 
-PersonaTwin will output a **Validation Summary Table** showing:
-
-- Pain Alignment per persona/region
-- Switching Cost & Commitment Signal
-- Accept / Pivot / Reject verdicts
-- Strategic Recommendation: which market to prioritize
+The system will generate a table declaring: The absolute best target is "Young, single-location cafe owners". You just saved thousands of dollars in misdirected ad spend.
 
 ---
 
-## 🔵 4. Advanced: Multi-Persona Comparison
+## 🛠 PLAYBOOK 2: Validating New Features (Before Coding)
 
-Test the same feature against multiple personas to validate market segments:
+*You have a new idea. Don't code it yet. Validate it.*
 
-1. `@build-persona Young cafe owner, 28, tech-savvy`
-2. `@momtest "Digital receipt system"` — note the reaction
-3. `@build-persona Pharmacy owner, 55, traditional, Hanoi`
-4. `@momtest "Digital receipt system"` — compare reactions
+### Step 1: Extract Truth from Old Data
+If you just grabbed coffee with a user and they praised your idea, feed the transcript to the AI:
+> `@summarize "[Transcript where user praises the idea]"`
+> PersonaTwin will expose it: The user praised it out of politeness, but their actual past behavior shows they've never spent money solving this problem before.
 
-When two personas react very differently, you've discovered a **segment boundary**. See [multi_persona_demo.md](examples/multi_persona_demo.md) for a full example.
+### Step 2: Prep the Interview Script
+To avoid bias when talking to humans, let AI write the script:
+> `@build-persona CFO, 45, B2B SaaS`
+> `@interview-plan`
+> This generates 5 questions anchoring on Past Pain, completely avoiding "Would you buy this?"
 
----
-
-## 🟡 5. Customization
-
-### Injecting Custom Rules
-
-If you have specific internal team standards, you can force PersonaTwin to remember them:
-
-> *"Rule: Always assume this user only uses Zalo for work communication."*
-
-### Automated Testing (Dev/QA)
-
-If you are an AI engineer, you can run the test suite to ensure the persona stays on track:
-
-```bash
-npm run test
-```
-
-This runs `promptfoo` with **20 test cases** checking: No Compliment, Status Quo Anchor, Past Tense Focus, Commitment Test, Brevity, Anti-Feature-Dump, SaaS Consistency, Language Switch, Truth Filter, Fluff Detection, Regional Context, Escalation Logic, Healthcare Vertical, Logistics Vertical, AgTech Vertical, Japan/Korea Region, LATAM Region, Bad Data Ideas, @interview-plan Format, and @learning-log Theme Organization.
+### Step 3: Rehearsal & Grading
+If you write your own questions, get them graded:
+> `@coach [Your list of questions]`
+> Get a scorecard highlighting exactly which questions lead the witness.
 
 ---
 
-## 🟢 6. Phase 2 Commands: Coaching & Deep Research
+## 🚨 Fixing a "Dead App": Spotting 5 Fatal Anti-Patterns
+If your app isn't selling, run `@momtest` and pitch it exactly the way your Sales team does. If the system flags any of these errors, you know why you're failing:
 
-### `@coach` — Interview Question Grader
-
-Use **before** your real customer interviews. Submit your planned questions and get a Mom Test scorecard.
-
-**When to use**: You have a list of interview questions and want to catch bias before you contaminate your data.
-
-```
-@coach
-Persona: [target segment]
-My planned questions:
-1. [Question 1]
-2. [Question 2]
-3. [Question 3]
-```
-
-**Output**: PersonaTwin grades each question as ✅ Pass / ⚠️ Risky / ❌ Fail, explains *why* it fails the Mom Test, and rewrites it into a valid version. Includes a readiness verdict and the single biggest risk in your current question set.
-
-> See [examples/coach\_dig\_deeper\_demo.md](examples/coach_dig_deeper_demo.md) for a full worked example.
+1. **Feature Dumping**: Throwing 5 features at the customer (Persona will snap: "Too confusing, just tell me what helps me.")
+2. **Future Tense Trap**: "Will you use this feature?" (A fundamentally flawed leading question).
+3. **Vanity Metrics**: "We have 100k downloads." (Persona responds: "How many of them actually paid?")
+4. **Solution First**: Opening with "Our product uses AI..." before even asking where it hurts.
 
 ---
 
-### `@dig-deeper` — Root Cause Excavation
+## 🌏 Advanced Config: Conquering Cross-Border Markets (Regional Rules)
 
-Use **immediately after** `@momtest` when the persona reveals an interesting pain signal. Drill down to root cause using Digging techniques and a 5-Whys chain.
+PersonaTwin carries the DNA of **7 regions** and **6 industry verticals**. When bringing an existing app to a new country, set the Region to test international Product-Market Fit.
 
-**When to use**: The persona said something like *"Yeah, that's annoying, I lost a customer last month because…"* and you want to understand the depth and root of that pain.
+| Region/Industry | Setup in Persona | Consequence when running `@momtest` |
+|---|---|---|
+| **Vietnam 🇻🇳** | `Vietnam` | Hyper price-sensitive, Zalo-first, demands free trials. |
+| **Japan/Korea 🇯🇵** | `Japan` | Demands Consensus (nemawashi) - takes 6 months to close, requires local office. |
+| **LATAM 🌎** | `Brazil` / `LATAM` | All business happens on WhatsApp. High inflation risk. |
+| **Europe 🇪🇺** | `Europe` / `Germany`| Asks for GDPR compliance immediately. 12-week legal review. |
+| **SaaS B2B 💻**| `SaaS B2B` | Obsessed with TCO (Total Cost of Ownership) and ROI. Compares everything to HubSpot. |
+| **FinTech 🏦** | `FinTech` | Zero-trust. Demands SOC2 and Pen-test reports before taking a meeting. |
 
-```
-@momtest "A price sync tool for delivery platforms"
-... [persona reveals a pain about 60-minute manual updates] ...
-@dig-deeper
-```
+**Example of Cross-Border Testing:**
+1. `@build-persona Cafe Owner, 32, Bangkok, Thailand`  → Pitch App.
+2. `@build-persona Cafe Owner, 32, Jakarta, Indonesia` → Pitch App.
+3. `@final-summary` → Identify the friction difference between Thailand and Indo to adjust your pitch.
 
-**Output**: PersonaTwin runs 3-4 rounds of digging questions, then synthesizes a Root Cause Summary table showing surface complaint → real behavior → root cause → workaround → cost of inaction. Ends with a PM implication and a prototype test suggestion.
+---
+
+## ⚙️ Technical Customization (For Dev/QA)
+
+If you are an AI engineer integrating this into internal workflows:
+
+1. **Custom Rules**: Inject `Rule: Always assume this user relies heavily on SAP` into the context before running commands.
+2. **Automated Validation**: Benchmark your modifications using Promptfoo.
+   ```bash
+   npm run test
+   ```
+   (Runs 20 test cases covering: Anti-compliment, Hard Commitments, Regional Objections, Past Tense Focus, etc.)
 
 ---
 
-## ⚠️ 8. Important Notes
+## ⚠️ 8 Survival Rules Every Product/Biz Lead Must Know
 
-- **Never Trust Compliments**: PersonaTwin never compliments your idea. If it does, check `knowledge/mom_test_rules.md`.
-- **3 Types of Bad Data to Ignore**: Compliments, Fluff (generic claims), and Ideas (feature suggestions). All three corrupt your signal.
-- **Focus on the Past**: Always ask about what has happened. "Would you..." is the wrong question every time.
-- **Status Quo is the Competition**: The biggest competitor is never another product — it's doing nothing (or using Excel).
-- **Commitment > Interest**: "That sounds nice" = 0. "I'd pay $20/month" = signal. "I already paid $20 for a broken solution" = gold.
-- **No advancement = learning wasted**: If the conversation ends with "let me think about it," you didn't get a commitment. Push for a next step.
+1. **NEVER BE SATISFIED WITH PRAISE**: PersonaTwin is coded to never stroke your ego. Compliments = Bad Data.
+2. **The Status Quo is Death**: Your competitor isn't another app; your competitor is an Excel spreadsheet and a notebook.
+3. **Value = Switching Cost Overcome**: Customers only use your app if the joy of the solution outweighs the laziness of learning how to use it.
+4. **The Only Valid Timeline is the PAST**: "How long did it take you to do this last week?" >> "Do you think this feature will save you time?".
+
+*Use PersonaTwin like a punching bag. Throw your craziest ideas at it, and let it violently punch back with the truth.*
 
 ---
-<small>Powered by PersonaTwin Team · Version 3.0.0 · April 2026</small>
+<small>PersonaTwin Team · Playbook Version 3.0.0 · April 2026</small>

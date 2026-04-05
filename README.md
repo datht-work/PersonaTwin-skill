@@ -3,7 +3,7 @@
 > 🌍 [English](README.md) | 🇻🇳 [Tiếng Việt](README-vi.md)
 > 📖 [User Guide](USER_GUIDE.md) | 🇻🇳 [Hướng dẫn Sử dụng](USER_GUIDE-vi.md)
 
-**A specialized AI skill that acts as a synthetic user testing cloud. It applies "The Mom Test" principles to simulate ruthless, real-world user feedback — protecting Product Teams (Business, PMs, POs, and UI/UX) from their own biases to prevent wasted development cycles.**
+**Protect your Product Team from "polite lies" by simulating ruthless, real-world users.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![skills.sh](https://img.shields.io/badge/skills.sh-Listed-blueviolet.svg)](https://skills.sh/datht-work/personatwin-skill)
@@ -13,15 +13,33 @@
 
 ---
 
-## 🎯 The Value for the Entire Product Squad
+## 🛑 Why Do 90% of New Features Fail?
 
-Building products people want is hard because users often lie to be "polite." The cost of building the wrong feature is massive. **PersonaTwin** acts as a "truth filter" to de-risk development for every stakeholder:
+Because customers lie to be polite. They say *"Great idea!"*, *"I would definitely use that!"*... to make you happy. The team spends 2 months coding, you launch the product, and... **nobody opens their wallet**.
 
-- **📈 For Business & Strategy Leaders**: Validate market demand and willingness-to-pay *before* allocating budget. Prevent the company from building "nice-to-have" features that don't drive revenue.
-- **🧠 For Product Managers (PM) & Owners (PO)**: Prioritize the backlog using hard evidence of past user behavior instead of hypothetical "I would use this" statements. Generate actionable feature strategies using the built-in `@final-summary` engine.
-- **🎨 For UI/UX Designers**: Discover usability friction early. Test your proposed workflows against specific technical proficiency levels (e.g., a "non-tech-savvy pharmacy owner") to see if the switching cost is too high.
-- **🌍 Regional Market Validation**: Dynamically inject local market contexts (e.g., Vietnam vs. USA) to test cross-border product-market fit before launching physical or marketing campaigns.
-- **🚫 Kill Compliments**: Automatically filters out polite noise like "That sounds great!" and extracts only what users are *actually doing*.
+That is the catastrophic cost of being misled by compliments.
+
+**PersonaTwin** acts as a "Truth Filter". By strictly enforcing **The Mom Test** principles, this AI system will break apart your hypothetical ideas *before* the first line of code is ever written.
+
+## 🥊 1-Minute Reality Check: Polite User vs. PersonaTwin
+
+*Pitch: "I'm building a QR-code loyalty app for your cafe."*
+
+| Real User (Trying to please the PM) | PersonaTwin (Ruthless Mom Test calibration) |
+|---|---|
+| *"Awesome, great idea! Customers ask about memberships sometimes. If the UI is nice, I’d definitely have my staff use it."* | *"Morning rushes are packed. Scanning a QR takes 5 extra seconds per order. Is this faster than me punching a calculator? If not, I'd rather just give them a 50-cent discount manually."* |
+| ❌ Strokes your ego.<br>❌ Uses future tense: "would use".<br>❌ Feeds you **Bad Data**. | ✅ Exposes hidden switching costs.<br>✅ Grounds you in the **Status Quo**.<br>✅ Feeds you **Real Signals** to pivot. |
+
+---
+
+## 🎯 De-risk Development for the Entire Squad
+
+PersonaTwin forces hard truths directly into your development workflow:
+
+- **📈 Business & Strategy Leaders**: Validate market demand and willingness-to-pay *instantly*. Stop burning runway on "nice-to-have" features that don’t drive revenue.
+- **🧠 Product Managers (PM) & POs**: Weaponize hard evidence to kill bad roadmap requests. Generate structured interview learning logs (`@learning-log`) in 5 seconds.
+- **🎨 UI/UX Designers**: Test workflows against a "Non-tech-savvy" persona. Uncover fatal learning curves before committing to high-fidelity designs.
+- **🌍 Cross-Border Market Validation**: Switch your persona's context to the USA (demanding SOC2 compliance) or Japan (requiring Nemawashi consensus) with a single attribute.
 
 ---
 
