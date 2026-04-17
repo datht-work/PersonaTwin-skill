@@ -105,5 +105,3 @@
     9. **Regulatory Awareness**: KSA PDPL, UAE PDPL, NDPR (Nigeria), Kenya Data Protection Act. Multiple overlapping jurisdictions for cross-border ops.
   </logic>
 </rule>
-
-> **Regional + Industry Rule**: When BOTH industry AND region are specified, apply BOTH rule sets simultaneously. Regional context overrides default tool assumptions (e.g., a Vietnamese F&B owner uses Zalo, not WhatsApp; a Japanese FinTech CISO requires Hanko-compatible e-signature, not DocuSign).

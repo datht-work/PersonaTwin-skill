@@ -1,4 +1,4 @@
-description: "PersonaTwin skill test suite — validates 8 core behaviors: No Compliment, Status Quo Anchor, Past Tense Focus, Commitment Test, Brevity, Anti-Feature-Dump, SaaS Consistency, and Language Switch."
+description: "PersonaTwin skill test suite — validates 20 core behaviors across Mom Test rules, bad data taxonomy, industry verticals (10), regional contexts (7), coach mode, interview plan, and learning log."
 
 prompts:
   - id: base-prompt
@@ -137,3 +137,234 @@ tests:
           output.includes('này') ||
           output.includes('đang') ||
           output.includes('hiện')
+
+  # Test 9: Truth Filter (@summarize) — Must strip compliments and hypotheticals
+  - description: "Summarize — Must discard compliments and hypotheticals, retain only behaviors"
+    vars:
+      idea: >
+        @summarize "The user said the idea is amazing and they love the design.
+        They would definitely buy it if the price were right. Currently they use
+        a paper notebook to track orders and it takes them 30 minutes each morning."
+    prompts: [base-prompt]
+    assert:
+      - type: javascript
+        value: >
+          !output.toLowerCase().includes('amazing') &&
+          !output.toLowerCase().includes('would buy') &&
+          (output.toLowerCase().includes('notebook') ||
+           output.toLowerCase().includes('30 minutes') ||
+           output.toLowerCase().includes('currently') ||
+           output.toLowerCase().includes('paper'))
+
+  # Test 10: Fluff Detection — Must anchor generic claims with specific request
+  - description: "Bad Data — Must not accept generic/fluff claims without demanding specifics"
+    vars:
+      idea: "I usually struggle a lot with managing my customer data and I often make mistakes"
+    prompts: [base-prompt]
+    assert:
+      - type: javascript
+        value: >
+          output.toLowerCase().includes('last') ||
+          output.toLowerCase().includes('specific') ||
+          output.toLowerCase().includes('last time') ||
+          output.toLowerCase().includes('when') ||
+          output.toLowerCase().includes('walk me') ||
+          output.toLowerCase().includes('example')
+
+  # Test 11: Regional Context — Vietnam persona must mention Zalo or local tools
+  - description: "Regional — Vietnam persona must reference local tools (Zalo, MoMo, etc.)"
+    vars:
+      idea: "A cloud-based CRM system to manage your customer contacts"
+    prompts:
+      - id: vietnam-prompt
+        raw: >
+          You are PersonaTwin. The active persona is: A 42-year-old grocery shop owner
+          in Hanoi, Vietnam. Uses Zalo for all business communication. Extremely price-sensitive.
+          Critique the following idea in 2-3 sentences. Do not be polite. Be specific.
+          Reference local tools and context.
+    assert:
+      - type: javascript
+        value: >
+          output.toLowerCase().includes('zalo') ||
+          output.toLowerCase().includes('momo') ||
+          output.toLowerCase().includes('viet') ||
+          output.toLowerCase().includes('nghìn') ||
+          output.toLowerCase().includes('miễn phí') ||
+          output.toLowerCase().includes('facebook')
+
+  # Test 12: Escalation Logic — Near-convinced persona must raise ONE practical objection
+  - description: "Escalation — When pitch is genuinely close to solving pain, must NOT fully accept. Must raise one objection."
+    vars:
+      idea: "A tool that updates your menu price in 10 seconds across all platforms — Grab, ShopeeFood, and your QR menu simultaneously."
+    prompts: [base-prompt]
+    assert:
+      - type: javascript
+        value: >
+          (output.toLowerCase().includes('but') ||
+           output.toLowerCase().includes('however') ||
+           output.toLowerCase().includes('except') ||
+           output.toLowerCase().includes('problem') ||
+           output.toLowerCase().includes('cost') ||
+           output.toLowerCase().includes('who') ||
+           output.toLowerCase().includes('setup')) &&
+          !output.toLowerCase().includes('great idea') &&
+          !output.toLowerCase().includes('perfect') &&
+          !output.toLowerCase().includes('i love')
+
+  # Test 13: Healthcare vertical — must mention compliance or patient safety
+  - description: "Healthcare Vertical — Response must reference compliance, regulation, or patient safety concern"
+    vars:
+      idea: "A cloud app that stores patient records and allows doctors to access them from anywhere"
+    prompts:
+      - id: healthcare-prompt
+        raw: >
+          You are PersonaTwin. The active persona is: A clinic director, 52, Singapore.
+          Runs a private clinic with 5 doctors. Currently uses a legacy EMR system from 2014.
+          Extremely compliance-aware. Critique the following idea in 2-3 sentences. Do not be polite.
+    assert:
+      - type: javascript
+        value: >
+          output.toLowerCase().includes('hipaa') ||
+          output.toLowerCase().includes('compliance') ||
+          output.toLowerCase().includes('patient') ||
+          output.toLowerCase().includes('data') ||
+          output.toLowerCase().includes('breach') ||
+          output.toLowerCase().includes('regulate') ||
+          output.toLowerCase().includes('certif')
+
+  # Test 14: Logistics vertical — must mention SLA or operational risk
+  - description: "Logistics Vertical — Response must reference SLA, peak season, or system failure risk"
+    vars:
+      idea: "A new AI-powered route optimization tool that replaces your current Excel-based planning"
+    prompts:
+      - id: logistics-prompt
+        raw: >
+          You are PersonaTwin. The active persona is: A logistics operations manager, 40, Vietnam.
+          Manages a fleet of 30 trucks. Uses WhatsApp and Excel for route planning. Lives by delivery SLAs.
+          Critique the following idea in 2-3 sentences. Do not be polite. Be specific.
+    assert:
+      - type: javascript
+        value: >
+          output.toLowerCase().includes('crash') ||
+          output.toLowerCase().includes('down') ||
+          output.toLowerCase().includes('fail') ||
+          output.toLowerCase().includes('sla') ||
+          output.toLowerCase().includes('peak') ||
+          output.toLowerCase().includes('driver') ||
+          output.toLowerCase().includes('risk')
+
+  # Test 15: AgTech vertical — must mention offline or connectivity concern
+  - description: "AgTech Vertical — Response must reference offline, internet, or connectivity limitation"
+    vars:
+      idea: "An app that helps you track your harvest yield, soil quality, and market prices in real-time"
+    prompts:
+      - id: agtech-prompt
+        raw: >
+          You are PersonaTwin. The active persona is: A durian farm owner, 55, rural Mekong Delta, Vietnam.
+          Manages 5 hectares. No stable internet on the farm. Workers are seasonal laborers.
+          Critique the following idea in 2-3 sentences. Do not be polite.
+    assert:
+      - type: javascript
+        value: >
+          output.toLowerCase().includes('internet') ||
+          output.toLowerCase().includes('offline') ||
+          output.toLowerCase().includes('signal') ||
+          output.toLowerCase().includes('connect') ||
+          output.toLowerCase().includes('network') ||
+          output.toLowerCase().includes('worker') ||
+          output.toLowerCase().includes('field')
+
+  # Test 16: Japan/Korea regional context — must reference consensus, hierarchy, or local process
+  - description: "Japan/Korea Region — Response must reference consensus-driven process or approval hierarchy"
+    vars:
+      idea: "A project management SaaS tool to replace your current internal system"
+    prompts:
+      - id: japan-prompt
+        raw: >
+          You are PersonaTwin. The active persona is: A department head at a mid-size Japanese manufacturing firm, 48, Tokyo.
+          The company has used the same internal system for 10 years. Any new tool requires approval from 5 department heads.
+          Critique the following idea in 2-3 sentences. Do not be polite.
+    assert:
+      - type: javascript
+        value: >
+          output.toLowerCase().includes('approv') ||
+          output.toLowerCase().includes('team') ||
+          output.toLowerCase().includes('manager') ||
+          output.toLowerCase().includes('month') ||
+          output.toLowerCase().includes('decision') ||
+          output.toLowerCase().includes('stakeholder') ||
+          output.toLowerCase().includes('process')
+
+  # Test 17: LATAM regional — must reference WhatsApp or local payment tool
+  - description: "LATAM Region — Response must reference WhatsApp or local payment/workflow tools"
+    vars:
+      idea: "A B2B CRM system to manage your customer relationships and sales pipeline"
+    prompts:
+      - id: latam-prompt
+        raw: >
+          You are PersonaTwin. The active persona is: A small business owner, 38, São Paulo, Brazil.
+          Runs a clothing wholesaler with 8 clients. All business is done via WhatsApp. Uses no CRM.
+          Critique the following idea in 2-3 sentences. Do not be polite. Reference local tools.
+    assert:
+      - type: javascript
+        value: >
+          output.toLowerCase().includes('whatsapp') ||
+          output.toLowerCase().includes('pix') ||
+          output.toLowerCase().includes('mercado') ||
+          output.toLowerCase().includes('brazil') ||
+          output.toLowerCase().includes('already') ||
+          output.toLowerCase().includes('phone')
+
+  # Test 18: Bad Data Type 3 (Ideas) — must not accept feature suggestion as spec
+  - description: "Bad Data Ideas — Must redirect feature suggestion to root problem, not accept as spec"
+    vars:
+      idea: "Users told me: 'You should add a bulk import feature so we can upload 500 contacts at once'"
+    prompts: [base-prompt]
+    assert:
+      - type: javascript
+        value: >
+          (output.toLowerCase().includes('why') ||
+           output.toLowerCase().includes('problem') ||
+           output.toLowerCase().includes('root') ||
+           output.toLowerCase().includes('need') ||
+           output.toLowerCase().includes('what were they') ||
+           output.toLowerCase().includes('when they asked') ||
+           output.toLowerCase().includes('instead')) &&
+          !output.toLowerCase().includes('great suggestion') &&
+          !output.toLowerCase().includes('good idea') &&
+          !output.toLowerCase().includes('build that')
+
+  # Test 19: @interview-plan — output must include 5 questions and commitment ask section
+  - description: "@interview-plan — Must output at least 5 interview questions and a commitment-ask"
+    vars:
+      idea: "@interview-plan for a cafe owner persona in Vietnam"
+    prompts: [base-prompt]
+    assert:
+      - type: javascript
+        value: >
+          (output.includes('1.') || output.includes('1)') || output.match(/\d\./)) &&
+          (output.toLowerCase().includes('commit') ||
+           output.toLowerCase().includes('beta') ||
+           output.toLowerCase().includes('deposit') ||
+           output.toLowerCase().includes('intro') ||
+           output.toLowerCase().includes('refer'))
+
+  # Test 20: @learning-log — output must be organized by theme not by person
+  - description: "@learning-log — Output must be organized by learning/theme, not by individual respondent"
+    vars:
+      idea: >
+        @learning-log
+        Session with 3 personas: Cafe owner loved the idea. Restaurant owner said pricing is unclear.
+        Food truck operator said they already use Excel and it works fine.
+    prompts: [base-prompt]
+    assert:
+      - type: javascript
+        value: >
+          (output.toLowerCase().includes('learning') ||
+           output.toLowerCase().includes('insight') ||
+           output.toLowerCase().includes('theme') ||
+           output.toLowerCase().includes('pattern')) &&
+          (output.toLowerCase().includes('status quo') ||
+           output.toLowerCase().includes('behavior') ||
+           output.toLowerCase().includes('pain') ||
+           output.toLowerCase().includes('evidence'))

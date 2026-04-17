@@ -1,31 +1,49 @@
-# PersonaTwin: The Mom Test Simulation Skill 🤖 (Tiếng Việt)
+# PersonaTwin: Kỹ năng Giả lập "The Mom Test" 🤖 (Tiếng Việt)
 
 > 🌍 [English](README.md) | 🇻🇳 [Tiếng Việt](README-vi.md)
 > 📖 [User Guide](USER_GUIDE.md) | 🇻🇳 [Hướng dẫn Sử dụng](USER_GUIDE-vi.md)
 
-**Kỹ năng AI chuyên dụng đóng vai trò như một đám mây giả lập người dùng (synthetic user testing cloud). PersonaTwin áp dụng các nguyên tắc "The Mom Test" để tạo ra những phản hồi thực tế, "phũ phàng" — bảo vệ Product Managers khỏi những thiên kiến cá nhân.**
+**Bảo vệ Đội ngũ Phát triển Sản phẩm khỏi những "lời khen xã giao" bằng cách giả lập người dùng thực tế và phũ phàng.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](SKILL.md)
+[![skills.sh](https://img.shields.io/badge/skills.sh-Listed-blueviolet.svg)](https://skills.sh/datht-work/personatwin-skill)
+[![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](SKILL.md)
 [![Testing: promptfoo](https://img.shields.io/badge/testing-promptfoo-orange.svg)](tests/promptfooconfig.yaml)
 [![Standard: SKILL.md](https://img.shields.io/badge/standard-SKILL.md-purple.svg)](SKILL.md)
 
 ---
 
-## 🎯 Giá trị cốt lõi
+## 🛑 Tại sao 90% Tính năng mới đều Thất bại?
 
-Xây dựng sản phẩm mà khách hàng thực sự muốn là một thử thách lớn, bởi vì người dùng thường "nói dối" một cách lịch sự. **PersonaTwin** bảo vệ bạn khỏi những định kiến cá nhân bằng cách đóng vai trò là một "bộ lọc sự thật."
+Bởi vì khách hàng luôn nói dối để giữ lịch sự. Họ nói *"Ý tưởng tuyệt quá!"*, *"Tôi chắc chắn sẽ dùng!"*... để làm vui lòng bạn. Đội ngũ miệt mài lập trình trong 2 tháng, ra mắt sản phẩm, và... **không một ai móc ví ra trả tiền**.
 
-- **🚫 Loại bỏ lời khen**: Tự động lọc ra những câu "Nghe hay đấy!" và chỉ trích xuất bằng chứng thực tế về hành vi người dùng.
-- **⚡ Thử nghiệm nhanh**: Kiểm chứng ý tưởng tính năng với persona thực tế trước khi viết bất kỳ dòng code nào.
-- **🧪 Mom Test đóng gói**: Logic tích hợp tuân thủ nghiêm ngặt các nguyên tắc của Rob Fitzpatrick — tập trung vào hành vi quá khứ và nỗi đau hiện tại.
-- **🏗️ Persona có cấu trúc**: Sử dụng khung **5P Framework** (Profile, Psychology, Pains, Proficiency, Principles) để giả lập với độ tin cậy cao.
-- **🏭 Preset theo ngành**: Hành vi persona được cấu hình sẵn cho SaaS B2B, F&B/Bán lẻ, FinTech, EdTech, Consumer App và Security/Cybersecurity.
-- **🔍 Phát hiện Anti-Pattern**: Tự động phát hiện các lỗi PM thường gặp như Feature Dumping, Solution First, và Future Tense Trap.
+Đó là cái giá vô cùng đắt đỏ của việc bị đánh lừa bởi những lời khen.
+
+**PersonaTwin** được sinh ra để làm "Chốt chặn sự thật" (Truth Filter). Bằng cách áp dụng nghiêm ngặt nguyên lý **The Mom Test**, hệ thống AI này sẽ bẻ gãy mọi ý tưởng viển vông *trước khi* dòng code đầu tiên được viết ra.
+
+## 🥊 Cú Sốc Thực tế 1 Phút: Khách Xã Giao vs. PersonaTwin
+
+*Pitch ý tưởng: "Em định làm App Tích Điểm bằng QR cho quán cafe của anh."*
+
+| Người dùng thật (Đang làm vui lòng PM) | PersonaTwin (Phũ phàng chuẩn Mom Test) |
+|---|---|
+| *"Tuyệt vời, ý tưởng hay đấy! Thi thoảng khách cũng hỏi thẻ thành viên. Giao diện đẹp thì chắc chắn anh sẽ cho nhân viên dùng thử."* | *"Quán anh buổi sáng đông nghẹt. Quét màn hình QR mất thêm 5 giây mỗi đơn. Em có cách nào làm nhanh hơn anh bấm máy tính không? Nếu không thì anh thà bớt 3 nghìn cho lẹ."* |
+| ❌ Vỗ về cái tôi của bạn.<br>❌ Dùng thì tương lai: "sẽ dùng".<br>❌ Trả về **Dữ liệu Rác (Bad Data)**. | ✅ Chỉ ra chi phí ẩn (Switching cost).<br>✅ Hiện thực phũ phàng (Status quo).<br>✅ Trả về **Tín hiệu Thực tế** để PM nhìn nhận. |
 
 ---
 
-## 🏗️ Kiến trúc
+## 🎯 Cứu Rỗi Nguồn Lực Cho Toàn Đội
+
+PersonaTwin biến việc "để đó tính sau" thành hành động thực tế ngay trên màn hình làm việc:
+
+- **📈 Khối Kinh doanh & Chiến lược (Biz)**: Kiểm chứng sức mua của thị trường (Willingness-to-pay) *ngay lập tức*. Tránh đốt tiền vào các tính năng "có thì vui" nhưng không đẻ ra tiền.
+- **🧠 Product Managers (PM) & Owners (PO)**: Có bằng chứng giả lập sâu để đập tan các yêu cầu tính năng phi lý dựa trên cảm tính. Lưu lại Nhật ký học hỏi (`@learning-log`) trong 5 giây.
+- **🎨 Đội ngũ UI/UX Design**: Check luồng thao tác bằng một Persona "Mù công nghệ". Nếu Persona nói *"Phức tạp quá, tôi bỏ cuộc"*, bạn biết bản lề của thiết kế đang sai ở đâu.
+- **🌍 Test Product-Market Fit Quốc tế**: Chuyển Persona sang bối cảnh Mỹ (đòi hỏi SOC2 Compliance) hay Nhật (quy trình duyệt Nemawashi) chỉ bằng một câu lệnh.
+
+---
+
+## 🏗️ Kiến trúc Hệ thống
 
 ```mermaid
 graph LR
@@ -36,13 +54,14 @@ graph LR
         C[mom_test_rules.md]
         D[industry_verticals.md]
         E[anti_patterns.md]
-        F[conversation_tactics.md]
+        F[regional_context.md]
+        M[conversation_tactics.md]
     end
     subgraph References
         G[5p_framework_template.md]
         H[response_format.md]
     end
-    B --> C & D & E & F
+    B --> C & D & E & F & M
     B --> G & H
 ```
 
@@ -50,117 +69,111 @@ graph LR
 
 ```
 personatwin-skill/
-├── SKILL.md                          # Định nghĩa skill (Open Standard)
-├── knowledge/                        # Hệ thống tri thức mô-đun
-│   ├── mom_test_rules.md             # Quy tắc Mom Test + Truth Filter
-│   ├── industry_verticals.md         # Hành vi theo ngành: SaaS, F&B, FinTech, EdTech, Consumer, Security
-│   ├── anti_patterns.md              # Thư viện phát hiện anti-pattern của PM
-│   └── conversation_tactics.md       # Kỹ thuật hội thoại thực tế
-├── references/                       # Template & định dạng output
-│   ├── 5p_framework_template.md      # Template tạo persona 5P
-│   └── response_format.md            # Định dạng output cho từng lệnh
-├── examples/                         # Demo giả lập chuẩn mực
-│   ├── full_journey_demo.md          # End-to-end: Summarize → Build → Test
-│   ├── saas_b2b_demo.md              # Demo persona CFO ngành SaaS
-│   ├── multi_persona_demo.md         # Cùng pitch, 2 persona khác nhau
-│   └── mom_test_simulation.md        # Ví dụ giả lập nhanh
-├── tests/                            # Kiểm thử tự động
-│   └── promptfooconfig.yaml          # 8 test cases qua promptfoo
-└── package.json                      # Metadata & scripts
+├── SKILL.md                          # Tệp lõi định nghĩa thiết lập Skill
+├── knowledge/                        # Hệ thống Tri thức Mô-đun (Knowledge Base)
+│   ├── mom_test_rules.md             # Core Rule Momtest & Truth Filter
+│   ├── industry_verticals.md         # Hành vi theo ngành: SaaS, F&B, FinTech, v.v.
+│   ├── regional_context.md           # Hành vi theo khu vực: Vietnam, SEA, USA, EU
+│   ├── anti_patterns.md              # Thư viện Bắt lỗi thiên kiến của PM/Biz
+│   └── conversation_tactics.md       # Hành vi mâu thuẫn/cảm xúc người dùng
+├── references/                       # Khuôn mẫu format đầu ra (Dashboard, Persona Card)
+├── examples/                         # Ví dụ giả lập chạy thử
+├── tests/                            # Kiểm thử tự động (promptfoo)
+├── README.md / README-vi.md          # Tài liệu tổng quan (EN/VI)
+├── USER_GUIDE.md / USER_GUIDE-vi.md  # Hướng dẫn sử dụng từng bước (EN/VI)
+├── CHANGELOG.md                      # Lịch sử các phiên bản
+└── package.json                      # Cấu hình dự án
 ```
 
 ---
 
-## 🛠️ Tính năng chính
+## 🛠️ Các Tính năng Chính
 
-### 1. Công cụ Tri thức Mô-đun (4 modules)
+### 1. Hệ thống Lệnh Thao tác
 
-Sử dụng các thẻ XML (`<rule>`, `<template>`, `<example>`) trên 4 module tri thức để AI truy xuất chính xác và duy trì logic nhất quán.
+Tương tác trực tiếp với PersonaTwin bên trong không gian làm việc AI của bạn:
 
-### 2. Hệ thống câu lệnh
-
-Vì PersonaTwin là một AI skill, cách gọi lệnh sẽ phụ thuộc vào môi trường của bạn:
-
-- **IDE AI (Cursor, Windsurf, Copilot)**: `@personatwin @build-persona ...`
-- **Tác nhân CLI (Claude Code, Amp, Cline)**: "Dùng personatwin để `@build-persona`..."
-- **ChatGPT / Claude Web**: Dán file `SKILL.md` và gõ lệnh `@build-persona ...`
-
-| Lệnh | Hành động |
+| Lệnh tác vụ | Lợi ích cho Team Sản phẩm |
 | --- | --- |
-| `@build-persona [thông tin]` | Tạo persona 5P chi tiết từ thông tin nhân khẩu học |
-| `@momtest [ý tưởng]` | Đưa ý tưởng ra trước persona để nhận phản hồi thực tế |
-| `@summarize [nội dung]` | Trích xuất "sự thật phũ phàng" từ bản ghi phỏng vấn |
-| `@safeai lang [ngôn ngữ]` | Chuyển đổi ngôn ngữ phản hồi |
+| `@build-persona [thông tin]` | Tạo tệp Persona nội hàm sâu (khung 5P) dùng cho UX targeting. |
+| `@momtest [ý tưởng]` | Đưa giả thuyết/tính năng cho khách hàng ảo "đập tơi bời" để tìm Nỗi Đau thực. |
+| `@summarize [transcript]` | Trích xuất các sự thật "trần trụi" từ tệp ghi âm/ghi chú phỏng vấn thật. |
+| `@final-summary` | Xuất **Bảng Phân tích Cấp Chiến lược** để báo cáo lên C-Level hoặc chuẩn bị Sprint. |
 
-### 3. Persona theo ngành
+### 2. Mô phỏng Đa Ngành & Phân Vùng Chuyên Sâu
 
-Quy tắc hành vi cấu hình sẵn cho 6 ngành dọc, đảm bảo persona phản ứng thực tế theo bối cảnh kinh doanh.
+Test ngay sản phẩm trên 6 khối ngành (SaaS B2B, F&B, FinTech, v.v.) và được lót lớp bối cảnh địa phương (Ví dụ: SME Việt Nam chuộng Zalo, CISO của Mỹ đòi hỏi SOC2).
 
-### 4. Phát hiện Anti-Pattern
+### 3. Công Cụ Bắt Mạch "Cạm bẫy Product" (Anti-Pattern)
 
-Tự động phát hiện 6 lỗi PM thường gặp: Feature Dumping, Solution First, Future Tense Trap, Vanity Metrics, Competitor Comparison, và Premature Scaling.
-
-### 5. Kiểm thử tự động
-
-Bộ test `promptfoo` với 8 test cases: No Compliment, Status Quo Anchor, Past Tense Focus, Commitment Test, Brevity, Anti-Feature-Dump, SaaS Consistency, và Language Switch.
+Mỗi lần Biz hoặc PM trình bày ý tưởng theo cách sai lầm (như Feature Dumping, Solution First, Future Tense Trap), PersonaTwin sẽ cảnh báo và bắt quay góc độ giải quyết vấn đề.
 
 ---
 
-## 🚀 Bắt đầu nhanh
+## 🚀 Hướng Rút Ngắn Triển Khai
 
-### Cài đặt (qua CLI)
+### Cài đặt (via CLI)
 
 ```bash
 npx skills add datht-work/personatwin-skill
 ```
 
-### Thiết lập thủ công
+### Cài đặt Trực tiếp (IDE / Assistant)
 
-1. Sao chép nội dung **[SKILL.md](SKILL.md)** vào phần hướng dẫn (system prompt) của trợ lý AI.
-2. Cung cấp các thư mục **`knowledge/`**, **`references/`**, và **`examples/`** như các tệp tri thức/ngữ cảnh.
+1. Sao chép thẳng nội dung **[SKILL.md](SKILL.md)** gắn vào prompt hệ thống của công cụ AI bạn đang dùng. (*Mẹo: Phiên bản trong `.agents/skills/personatwin/SKILL.md` đã nhúng sẵn toàn bộ luật rất dễ xài cho Agent cục bộ*).
+2. Gọi các lệnh được mô tả trong [Tài liệu Hướng dẫn (User Guide)](USER_GUIDE-vi.md).
 
 ---
 
 ## 🌐 Tương thích
 
-PersonaTwin tuân thủ **SKILL.md Open Standard** và tương thích với:
+PersonaTwin hoàn toàn tuân thủ **SKILL.md Open Standard**, sử dụng trên:
 
 - **Claude Code** (Anthropic)
-- **Cursor** (AI Code Editor)
-- **Codex** (OpenAI)
-- **Bất kỳ agent** hỗ trợ chuẩn SKILL.md
+- **Cursor** / **Windsurf** / **Copilot** (AI Code Editors)
+- Các cấu hình trình giả lập **Web** (ChatGPT / Claude Web UIs)
 
 ---
 
-## 📋 Lịch sử phiên bản
+## 📋 Lịch sử Nâng Cấp Sản Phẩm
 
 | Phiên bản | Ngày | Điểm nổi bật |
 | --- | --- | --- |
-| **v2.0.0** | 29/03/2026 | **Nâng cấp lớn**. Tuân thủ SKILL.md Open Standard. Knowledge Engine x4. Test suite x8. Industry verticals. Anti-pattern detection. |
-| **v1.3.0** | 27/03/2026 | **Chuẩn hóa dự án**. Thêm LICENSE, CHANGELOG, CONTRIBUTING. Sửa lỗi version drift. |
-| **v1.2.0** | 27/03/2026 | **Chất lượng & Tích hợp**. Full journey demo, bảng Good vs Bad, sửa lỗi lint. |
-| **v1.1.0** | 27/03/2026 | **Nâng cấp tiêu chuẩn Skill AI Safe**. Modular Knowledge Engine, Command System, XML-tag support. |
-| **v1.0.0** | 26/03/2026 | Phiên bản đầu tiên — Giả lập Mom Test cơ bản. |
+| **v3.0.0** | 01/04/2026 | **Mở Rộng Chiến Lược**. 4 ngành mới (Y tế, Bất động sản, Logistics, Nông nghiệp). 3 region mới (NHẬT\/HÀN, LATAM, CHÂU PHI\/TRUNG ĐÔNG). Lệnh `@interview-plan`, `@learning-log`. GitHub CI. 20 test cases. |
+| **v2.3.0** | 01/04/2026 | **Coaching & Intelligence**. Lệnh `@coach`, `@dig-deeper`, phân loại Early Adopter, Customer Slicing. Attribution Rob Fitzpatrick. |
+| **v2.2.0** | 01/04/2026 | **Tuân thủ Mom Test++**. Bộ phân loại Bad Data. Khung Commitment & Advancement. Chiến thuật Đào sâu. 12 test cases. |
+| **v2.1.0** | 30/03/2026 | **Phiên bản Prod**. Thêm Regional Context Rules, lệnh `@final-summary` báo cáo chiến lược, module Agent nhúng độc lập. |
+| **v2.0.0** | 29/03/2026 | **Bản Upgrade Chính**. Tuân chuẩn SKILL.md. Expand gấp x4 lần lõi Knowledge phân tách. Thêm quy trình test x8 promptfoo. |
+| **v1.3.0** | 27/03/2026 | **Quy chuẩn hóa Open-Source**. Thêm License, Changelog, file rule Contributor. |
+| **v1.2.0** | 27/03/2026 | **Hoàn thiện CaseStudy**. Bản Demo hành trình từ thu thập đến báo cáo. Khắc phục lỗi chuẩn markdown linter. |
 
 ---
 
-## 🤝 Đóng góp
+## 📚 Nền Tảng Tri Thức
 
-Chúng tôi hoan nghênh các đóng góp cho kho tri thức `knowledge/`, đặc biệt:
+PersonaTwin được xây dựng dựa trên phương pháp luận trong cuốn sách **"The Mom Test"** của tác giả **Rob Fitzpatrick**.
 
-- Persona cho các ngành công nghiệp mới
-- Anti-pattern và kỹ thuật hội thoại bổ sung
-- Hành vi persona bản địa hóa cho các thị trường khác nhau
-- Test case mới cho bộ `promptfoo`
+> *"The Mom Test là bộ quy tắc đơn giản giúp tạo ra những câu hỏi tốt — tốt đến mức người thân của bạn cũng không thể nói dối bạn được."*
+> — Rob Fitzpatrick
 
-Xem [CONTRIBUTING.md](CONTRIBUTING.md) để biết hướng dẫn.
+The Mom Test dạy các startup và đội nhóm sản phẩm cách nói chuyện với khách hàng và khám phá xem liệu ý tưởng sản phẩm có tốt hay không — ngay cả khi mọi người đang nói dối để giữ lịch sự. Đây là cuốn sảch nền tảng bắt buộc cho bất kỳ ai làm product.
+
+| | |
+|:---|:---|
+| **Sách** | [The Mom Test](https://www.momtestbook.com/) — Rob Fitzpatrick |
+| **Mua bản In** | [Amazon (geni.us/momtest)](https://geni.us/momtest) |
+| **Mua bản PDF** | [Gumroad](https://gumroad.com/l/momtest) |
+| **Khóa học Online** | [Practical Customer Development trên Udemy](https://www.udemy.com/practical-customer-development/) |
+| **Tác giả** | [robfitz.com](http://robfitz.com/) |
+
+> **Tuyên bố minh bạch:** PersonaTwin là một AI skill độc lập được **truyền cảm hứng từ** phương pháp luận của The Mom Test. Không có bất kỳ liên kết chính thức nào với Rob Fitzpatrick hoặc các ấn phẩm của ông. Chúng tôi trân trọng mạnh mẽ việc bạn đọc nguyên tác — cuốn sách gốc sâu sắc hơn bất kỳ mô phỏng nào rất nhiều.
 
 ---
 
-## 📄 Giấy phép
+## 📄 Bản Quyền & Trách Nhiệm
 
-Giấy phép MIT — xem [LICENSE](LICENSE) để biết chi tiết.
+Cấp phép mã nguồn mở MIT License — xem [LICENSE](LICENSE) để biết chi tiết.
 
-> ⚠️ **Lưu ý:** Kỹ năng này cung cấp giả lập và hướng dẫn đào tạo. Nó không thay thế được việc bạn cần nói chuyện trực tiếp với người dùng thực tế.
+> ⚠️ **Lưu ý Giới hạn:** Kỹ năng này cung cấp các phân tích mô phỏng đẳng cấp để tiết kiệm chi phí làm sản phẩm và tinh chỉnh hướng đi kinh doanh. Đây *KHÔNG* phải là phương án thay thế việc phỏng vấn con người và người dùng mua hàng thực tế ngoài đời.
 
-*Được xây dựng với ❤️ bởi PersonaTwin Team · v2.0.0 · Tháng 03/2026*
+*Được xây dựng với ❤️ bởi PersonaTwin Team · Phiên bản 3.0.0 · Tháng 04/2026*

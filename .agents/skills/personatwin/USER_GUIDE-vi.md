@@ -1,6 +1,6 @@
-# PersonaTwin: Hướng dẫn Sử dụng (User Guide)
+# PersonaTwin: Hướng dẫn Sử dụng & Playbook Chiến lược
 
-Tài liệu này cung cấp hướng dẫn chi tiết cách sử dụng kỹ năng **PersonaTwin** để giả lập người dùng và kiểm chứng ý tưởng sản phẩm theo nguyên tắc "The Mom Test".
+Tài liệu này không chỉ hướng dẫn cách dùng lệnh, mà là một **Playbook Chiến lược**. Bạn sẽ học cách dùng PersonaTwin để: (A) Tránh code sai tính năng, và quan trọng nhất (B) **Dò tìm ngách thị trường (Product-Market Fit) cho một App/Sản phẩm đang chạy.**
 
 ---
 
@@ -9,123 +9,146 @@ Tài liệu này cung cấp hướng dẫn chi tiết cách sử dụng kỹ nă
 Vì PersonaTwin là một AI skill, cách gọi lệnh sẽ phụ thuộc vào môi trường bạn dùng:
 
 - **IDE AI (Cursor, Windsurf, Copilot, v.v.)**: Gọi tên agent và dùng lệnh (vd: `@personatwin @build-persona ...`).
-- **Tác nhân CLI (Claude Code, Amp, Cline, v.v.)**: Giao tiếp bằng ngôn ngữ tự nhiên (vd: "Hãy dùng personatwin để `@build-persona`...").
-- **ChatGPT / Claude Web**: Dán file `SKILL.md` vào ngữ cảnh và gõ trực tiếp lệnh (vd: `@build-persona ...`).
+- **Tác nhân CLI (Claude Code, Cline, v.v.)**: Giao tiếp bằng ngôn ngữ tự nhiên (vd: "Hãy dùng personatwin để `@build-persona`...").
+- **ChatGPT / Claude Web**: Dán file `SKILL.md` vào ngữ cảnh và gõ trực tiếp lệnh.
 
 ---
 
-## ⚡ Bảng lệnh nhanh (Cheat Sheet)
+## ⚡ Bảng Lệnh Nhanh (Cheat Sheet)
 
-| Lệnh | Hành động / Hành vi |
+| Lệnh | Use Case Chính |
 |---|---|
-| `@build-persona [thông tin]` | **Xây dựng Persona**: Tạo một người dùng ảo chi tiết dựa trên khung 5P Framework. |
-| `@momtest [ý tưởng/tính năng]` | **Kiểm thử Mom Test**: Đưa ý tưởng ra trước Persona để nhận phản hồi "phũ phàng" và trung thực. |
-| `@summarize [nội dung]` | **Lọc sự thật (Truth Filter)**: Trích xuất các nỗi đau (Pains) và hành vi thực tế từ bản ghi phỏng vấn. |
-| `@safeai lang [Ngôn ngữ]` | **Đa ngôn ngữ**: Chuyển đổi ngôn ngữ phản hồi (mặc định tự nhận diện). |
+| `@build-persona [thông tin]` | Tạo người dùng, phân loại Early Adopter. Ép cắt nhỏ tập khách hàng quá rộng. |
+| `@momtest [ý tưởng/app]` | Pitch tính năng/app để nhận phản hồi "phức tạp, từ chối, hoặc đòi hỏi". |
+| `@summarize [nội dung]` | Lọc sự thật từ file meeting. Xóa bỏ lời khen (Fluff). |
+| `@coach [câu hỏi]` | Chấm điểm kịch bản interview sale/CSKH của bạn xem có dính lỗi dẫn dắt không. |
+| `@interview-plan` | Tự động tạo 5 câu hỏi chuẩn Mom Test cho Persona hiện tại. |
+| `@dig-deeper` | Đào sâu (5-Whys) sau khi `@momtest` tìm ra một vết xước để tìm Nỗi Đau Gốc. |
+| `@final-summary` | Chốt hạ Data thành Dashboard chiến lược (Bỏ đối tượng A, đánh đối tượng B). |
+| `@learning-log` | Nhật ký học hỏi sau phỏng vấn (gom theo tính năng, không theo người). |
 
 ---
 
-## 🟢 1. Quy trình làm việc (Workflow)
+## 🎯 PLAYBOOK 1: Tìm Tập Khách Hàng Cho "App Đang Chạy" (Product-Market Fit)
 
-### Bước 1: Thu thập dữ liệu & Lọc sự thật
+*App của bạn đã code xong, có tính năng rất hay, nhưng ném ra thị trường không ai xài. Lỗi do bạn bán sai tập khách hàng. Hãy dùng quy trình 5 bước sau để dò tìm "Niche Market" (Thị trường ngách):*
 
-Sử dụng lệnh `@summarize` khi bạn có bản ghi phỏng vấn thô. PersonaTwin sẽ loại bỏ những lời khen sáo rỗng và chỉ giữ lại những gì người dùng **đang làm** hoặc **đã làm**.
+### Bước 1: Slicing (Chia nhỏ tập khách hàng)
 
-> `@summarize "Người dùng nói: Sản phẩm của bạn rất hay, tôi sẽ mua nếu có thêm tính năng X. Hiện tại tôi đang dùng Excel để quản lý."`
-> **Kết quả**: PersonaTwin sẽ chỉ ra rằng ý tưởng "tính năng X" chỉ là giả thuyết, hành vi thực tế là "đang dùng Excel".
+Đừng test với đại chúng. Hãy tạo 3 Persona thuộc 3 ngách hoàn toàn khác biệt trên cùng 1 thị trường.
 
-### Bước 2: Xây dựng Persona (5P Framework)
+1. `@build-persona Chủ quán cafe trẻ, 28 tuổi, rành công nghệ, ở Quận 1, Việt Nam`
+2. `@build-persona Chủ tiệm tạp hóa, 50 tuổi, chỉ xài Zalo, ở ngoại ô, Việt Nam`
+3. `@build-persona Quản lý chuỗi F&B 10 cơ sở, quan tâm quản trị dòng tiền`
 
-Sử dụng lệnh `@build-persona` để tạo một đối tượng giả lập. Bạn nên cung cấp thông tin nhân khẩu học cơ bản.
+### Bước 2: The Core Pitch (Test luồng chức năng)
 
-> `@build-persona Chủ cửa hàng tạp hóa tại Việt Nam, 45 tuổi, ít rành công nghệ.`
+Đưa tính năng cốt lõi của App bạn cho từng Persona bằng lệnh `@momtest`:
+> `@momtest "Bên em có tính năng quét mã vạch trên app để tự động lên báo cáo xuất nhập tồn trong 3 giây."`
 
-PersonaTwin sẽ tạo ra một **Persona Card** có cấu trúc với Profile, Psychology, Pains & Gains, Proficiency và Principles.
+### Bước 3: Đọc vị Switching Cost (Chi phí chuyển đổi)
 
-### Bước 3: Giả lập phản hồi (Mom Test Simulation)
+PersonaTwin sẽ trả về phản ứng thật. Bạn KHÔNG tìm người khen "App hay", bạn tìm người có **Pain Alignment = ✅** và **Switching Cost = 🟢 (Thấp)**.
 
-Sử dụng lệnh `@momtest` để kiểm tra ý tưởng của bạn.
+- *Persona 2 (Bác 50 tuổi)* sẽ phản bác: "Bác ghi sổ tay cho nhanh, mắt mờ rồi quét mã gì." (Bỏ tập khách này).
+- *Persona 3 (Chuỗi F&B)* sẽ phản bác: "Bên anh xài Oracle rồi, phần mềm em có liên thông dữ liệu được không?" (Tập khách này đòi hỏi quá cao).
 
-> `@momtest "Tôi muốn làm một ứng dụng tích điểm 5 bước cho cửa hàng của bạn."`
-> **PersonaTwin**: "Tôi không có thời gian cho 5 bước. Tôi còn bận trông tiệm. Hiện tại tôi chỉ nhớ mặt khách rồi bớt cho họ 2-3 nghìn cho nhanh."
+### Bước 4: Đào sâu tìm Content Marketing
 
----
+Giả sử Persona 1 (Chủ quán trẻ) bảo: "Cũng được, cuối ngày em hay bị lệch tiền kho". Khoan sâu ngay lập tức:
+> `@dig-deeper`
 
-## 🟡 2. Preset theo Ngành
+PersonaTwin sẽ tung kỹ thuật 5-Whys để lật mở việc chủ quán mất 2 tiếng mỗi đêm dò lại file Excel. **Đó chính là câu Headline chạy Ads của bạn!**
 
-PersonaTwin có các quy tắc hành vi persona được cấu hình sẵn cho 6 ngành dọc. Khi bạn tạo persona từ một ngành cụ thể, skill sẽ tự động tải quy tắc hành vi phù hợp.
+### Bước 5: Chốt hạ Chiến lược
 
-| Ngành | Tư duy Persona | Kiểu phản đối mặc định |
-|-------|----------------|------------------------|
-| **SaaS B2B** | CFO / Ops Manager. Tập trung ROI. | "TCO là bao nhiêu? Chúng tôi đã trả cho HubSpot rồi." |
-| **F&B / Bán lẻ** | Chủ shop. Tập trung dòng tiền. | "Tôi không có thời gian học phần mềm mới." |
-| **FinTech** | Né rủi ro. Tuân thủ trước tiên. | "Có đạt chuẩn không? Audit thì sao?" |
-| **EdTech** | Giáo viên quá tải. Hoài nghi. | "Tôi đã thấy 10 app như vậy rồi. App nào cũng chết." |
-| **Consumer App** | End user. 3 giây chú ý. | "Tôi đã có app cho việc đó rồi. Tải thêm chi?" |
-| **Security** | CISO. Zero-trust. | "Dữ liệu lưu ở đâu? Cho xem báo cáo SOC2." |
+Chạy lệnh chốt sổ:
+> `@final-summary`
 
-### Ví dụ: Persona SaaS B2B
-
-> `@build-persona CFO công ty SaaS 50 người, Singapore, data-driven`
-> Sau đó: `@momtest "Công cụ dự báo doanh thu bằng AI"`
-> PersonaTwin sẽ phản hồi với các phản đối về ROI/TCO và tham chiếu đến công cụ hiện có như HubSpot.
+Hệ thống sẽ lập bảng chỉ ra: Tập khách đáng đánh nhất là "Chủ shop trẻ 1 cơ sở". Bạn vừa tiết kiệm được hàng chục triệu đồng chạy Ads sai tập khách.
 
 ---
 
-## 🔴 3. Phát hiện Anti-Pattern
+## 🛠 PLAYBOOK 2: Thẩm Định Tính Năng Mới (Trước Khi Code)
 
-PersonaTwin tự động phát hiện khi pitch của bạn chứa các lỗi PM thường gặp:
+*Bạn có ý tưởng mới. Đừng code vội. Hãy kiểm chứng.*
 
-| Anti-Pattern | Biểu hiện | Phản ứng PersonaTwin |
-|-------------|-----------|---------------------|
-| **Feature Dumping** | Liệt kê 3+ tính năng cùng lúc | "Bạn làm tôi rối ở tính năng thứ 2. Chỉ nói về cái giúp tôi thôi." |
-| **Solution First** | Mô tả giải pháp mà không hỏi về vấn đề | "Khoan — bạn đang giải quyết vấn đề gì?" |
-| **Future Tense Trap** | "Bạn sẽ dùng nếu..." | "Tôi không biết tôi sẽ làm gì. Nhưng tuần trước tôi..." |
-| **Vanity Metrics** | "Chúng tôi có 50,000 lượt tải" | "Tải về chẳng có nghĩa gì. Bao nhiêu người trả tiền?" |
-| **Competitor Comparison** | "Giống Grab nhưng cho X" | "Tôi không dùng Grab cho X. Tôi gọi chị Tư." |
-| **Premature Scaling** | "Nhắm 10 triệu user ở ĐNA" | "Tuyệt. Nhưng nó có hoạt động cho tiệm TÔI không?" |
+### Bước 1: Lọc Sự Thật từ Data Cũ
 
----
+Nếu bạn vừa đi cafe hỏi ý kiến khách hàng về ý tưởng, hãy ném đoạn ghi âm cho AI:
+> `@summarize "[Đoạn ghi âm khách khen ý tưởng]"`
+> PersonaTwin sẽ vạch trần: Khách khen vì lịch sự, thực tế họ chưa bao giờ bỏ tiền mua giải pháp tương tự trong quá khứ.
 
-## 🔵 4. Nâng cao: So sánh Multi-Persona
+### Bước 2: Chuẩn bị kịch bản phỏng vấn
 
-Kiểm thử cùng một tính năng với nhiều persona để xác nhận phân khúc thị trường:
+Để tránh mắc lỗi khi gặp khách thật, hãy bắt AI viết kịch bản:
+> `@build-persona CFO 45 tuổi, B2B SaaS`
+> `@interview-plan`
+> Sinh ra 5 câu hỏi đào sâu về Nỗi Đau Quá Khứ, thay vì câu hỏi "Anh có thích tính năng này không?".
 
-1. `@build-persona Chủ quán cafe trẻ, 28 tuổi, rành công nghệ`
-2. `@momtest "Hệ thống hóa đơn điện tử"` — ghi nhận phản ứng
-3. `@build-persona Chủ tiệm thuốc, 55 tuổi, truyền thống, Hà Nội`
-4. `@momtest "Hệ thống hóa đơn điện tử"` — so sánh phản ứng
+### Bước 3: Diễn tập & Chấm điểm
 
-Khi hai persona phản ứng rất khác nhau, bạn đã phát hiện **ranh giới phân khúc**. Xem [multi_persona_demo.md](examples/multi_persona_demo.md) để xem ví dụ đầy đủ.
+Nếu bạn tự viết câu hỏi, hãy nhờ AI chấm điểm:
+> `@coach [Danh sách câu hỏi của bạn]`
+> Nhận đánh giá xem câu nào vi phạm nguyên tắc thiên kiến.
 
 ---
 
-## 🟡 5. Tùy chỉnh
+## 🚨 Khắc phục App "Ế": Nhận diện 5 Anti-Pattern Trí Mạng
 
-### Tiêm quy tắc tùy chỉnh (Custom Rules)
+Nếu App bạn ế, hãy chạy lệnh `@momtest` và pitch đúng câu mà đội Sale của bạn đang dùng. Nếu hệ thống báo đỏ một trong các lỗi sau, bạn đã biết tại sao mình thất bại:
 
-Nếu bạn có các quy trình nội bộ riêng, bạn có thể yêu cầu PersonaTwin ghi nhớ:
-
-> *"Quy tắc: Luôn giả định người dùng này chỉ dùng Zalo để trao đổi công việc."*
-
-### Kiểm thử tự động (Dev/QA)
-
-Nếu bạn là kỹ sư AI, bạn có thể chạy bộ kiểm thử để đảm bảo Persona không bị "lạc đề":
-
-```bash
-npm run test
-```
-
-Lệnh này chạy `promptfoo` với 8 test cases kiểm tra: No Compliment, Status Quo Anchor, Past Tense Focus, Commitment Test, Brevity, Anti-Feature-Dump, SaaS Consistency, và Language Switch.
+1. **Feature Dumping**: Ném 5 tính năng vào mặt khách (Persona sẽ chửi: "Rối quá, nói cái gì giúp tôi thôi").
+2. **Future Tense Trap**: "Anh sẽ dùng tính năng này chứ?" (Câu hỏi dẫn dắt sai lầm).
+3. **Vanity Metrics**: "Bên em có 100k downloads" (Persona: "Bao nhiêu người trả tiền?").
+4. **Solution First**: Mở mồm ra là "Sản phẩm em có AI..." mà chưa hỏi khách hàng đang đau ở đâu.
 
 ---
 
-## ⚠️ 6. Lưu ý quan trọng
+## 🌏 Cấu hình Nâng cao: Đánh Chiếm Thị trường Mới (Regional Rules)
 
-- **Đừng tin vào lời khen**: PersonaTwin được thiết kế để **không bao giờ khen ngợi** ý tưởng. Nếu nó khen, hãy kiểm tra lại cấu phần `knowledge/mom_test_rules.md`.
-- **Dựa trên quá khứ**: Luôn hỏi về những gì đã xảy ra, không hỏi về tương lai ("Bạn sẽ..." là câu hỏi sai).
-- **Status Quo là đối thủ**: Đối thủ lớn nhất không bao giờ là sản phẩm khác — mà là "không làm gì cả" (hoặc dùng Excel).
-- **Cam kết > Quan tâm**: "Nghe hay đấy" không có ý nghĩa gì. "Tôi sẽ trả $20/tháng" có ý nghĩa. "Tôi đã trả $20/tháng cho một giải pháp nửa vời" mới là tất cả.
+PersonaTwin chứa bộ DNA của **7 khu vực** và **6 ngành** đặc thù. Khi bạn ném App hiện tại sang thị trường khác, hãy set Region để test Product-Market Fit quốc tế.
+
+| Vùng/Ngành | Setup trong Persona | Hệ quả khi chạy `@momtest` |
+|---|---|---|
+| **Việt Nam 🇻🇳** | `Vietnam` | Khách siêu nhạy cảm về giá, check Zalo-first, thích hàng miễn phí. |
+| **Nhật/Hàn 🇯🇵** | `Japan` | Đòi hỏi Consensus (nemawashi) - tốn 6 tháng để chốt deal, yêu cầu văn phòng nội địa. |
+| **LATAM 🌎** | `Brazil` / `LATAM` | Mọi nghiệp vụ phải nằm trên WhatsApp, rủi ro lạm phát cao. |
+| **Châu Âu 🇪🇺** | `Europe` / `Germany`| Hỏi giấy phép GDPR đầu tiên. Tốn 12 tuần chỉ để team Legal duyệt App của bạn. |
+| **SaaS B2B 💻**| `SaaS B2B` | Cực gắt về TCO (Total Cost of Ownership) và ROI. Chuyên so sánh với HubSpot. |
+| **FinTech 🏦** | `FinTech` | Zero-trust. Đòi hỏi báo cáo an ninh mạng (SOC2, Pen-test) trước khi nói chuyện. |
+
+**Ví dụ Test Xuyên Biên Giới:**
+
+1. `@build-persona Chủ quán cafe, 32 tuổi, Bangkok, Thái Lan`  → Pitch App.
+2. `@build-persona Chủ quán cafe, 32 tuổi, Jakarta, Indonesia` → Pitch App.
+3. `@final-summary` → Xác định rào cản ở Thái khác gì Indo để tinh chỉnh App.
 
 ---
-<small>Được cung cấp bởi PersonaTwin Team · Phiên bản 2.0.0 · Tháng 3/2026</small>
+
+## ⚙️ Tùy Chỉnh Kỹ Thuật (Cho Dev/QA)
+
+Nếu bạn là kỹ sư AI tích hợp hệ thống nội bộ:
+
+1. **Custom Rules**: Cấy lệnh `Quy tắc: Luôn giả định người dùng xài phần mềm SAP` vào context trước khi chạy lệnh.
+2. **Automated Validation**: Benchmark phiên bản của bạn với Promptfoo.
+
+   ```bash
+   npm run test
+   ```
+
+   (Chạy 20 test cases bao trùm: Chống khen ngợi, Đòi hỏi Commit thật, Phản đối theo quốc gia, Focus thì Quá khứ, v.v.)
+
+---
+
+## ⚠️ 8 Quy Tắc Sống Còn Mọi Product/Biz Phải Nhớ
+
+1. **KHÔNG BAO GIỜ TỰ MÃN VỚI LỜI KHEN**: PersonaTwin được code để không bao giờ tung hô bạn. Khen = Dữ liệu Rác.
+2. **Thói quen cũ (Status Quo) là Tử thần**: Đối thủ không phải là App khác, đối thủ là cuốn Sổ Tay và bảng Excel.
+3. **Giá trị = Mức độ rũ bỏ**: Khách hàng chỉ xài App của bạn nếu sự sung sướng kiếm được lớn hơn độ lười biếng khi phải học cách dùng nó.
+4. **Mốc thời gian - QUÁ KHỨ CÓ THẬT**: "Tuần trước anh làm việc này mất bao lâu?" >> "Anh có nghĩ tính năng này sẽ tiết kiệm thời gian không?".
+
+*Hãy dùng PersonaTwin như một bao cát. Cứ đấm mọi ý tưởng điên rồ vào đó, để nó dội ngược lại những sự thật tàn khốc nhất.*
+
+---
+<small>PersonaTwin Team · Playbook Version 3.0.0 · Tháng 4/2026</small>
