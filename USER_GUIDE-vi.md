@@ -99,21 +99,25 @@ Nếu bạn tự viết câu hỏi, hãy nhờ AI chấm điểm:
 *Chuyển từ việc xác thực ý tưởng sang chốt deal và tối ưu giá bán.*
 
 ### 🏛️ Uỷ ban Chốt Sale B2B (`@buying-committee`)
+
 Pitch sản phẩm B2B để mô phỏng một cuộc tranh luận nội bộ của hội đồng mua hàng:
 > `@buying-committee "Bên em cung cấp nền tảng đào tạo an ninh mạng giá 50 triệu/năm"`
 Hệ thống sinh ra Người dùng (User), Giám đốc Tài chính (CFO), và Giám đốc Bảo mật (CISO) để tranh luận. Dù User có thích đến mấy, nếu ROI hoặc chuẩn bảo mật bị rớt, deal lập tức bị BLOCK.
 
 ### ⚔️ Cỗ Máy Chống Đối Thủ (`@vs-competitor`)
+
 Bạn muốn lật đổ một gã khổng lồ? Ép Persona bỏ qua các "tính năng xịn" và chỉ soi vào sự đau đớn khi phải chuyển đổi nền tảng:
 > `@vs-competitor "KiotViet" "Phần mềm bên em rẻ hơn 20% và UI mượt hơn"`
 Persona sẽ phản pháo tàn bạo về việc di chuyển dữ liệu, trói buộc hợp đồng, và thời gian đào tạo lại nhân viên để chứng minh "rẻ hơn 20%" là chưa đủ.
 
 ### 💰 Định Giá Van Westendorp (`@price-test`)
+
 Đừng bao giờ hỏi "Anh có trả tiền không?" Thay vào đó, đưa ra một mức giá và để Persona phản ứng dựa trên các ngưỡng tâm lý:
 > `@price-test "Gói 990k/tháng cho xuất dữ liệu không giới hạn"`
 Nhận các phản ứng chân thực để biết mức giá đó là món hời, đắt đến mức xúc phạm, hay rẻ đến mức đáng ngờ.
 
 ### 🔥 Đốt Cháy Roadmap (`@roast-roadmap`)
+
 Ngừng code những thứ người dùng không cần:
 > `@roast-roadmap "1. Tích hợp GenAI 2. Giao diện Dark mode 3. Xuất Excel 1 chạm"`
 Persona sẽ chấm điểm tàn bạo các tính năng này dựa trên *Mức độ Tuyệt vọng muốn mua* (Desperation to Buy), gạch ngang các tính năng Phông bạt (Vanity Features) và chỉ ra đâu mới là Cỗ máy in tiền thực sự.

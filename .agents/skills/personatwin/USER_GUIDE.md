@@ -99,21 +99,25 @@ If you write your own questions, get them graded:
 *Moving from validating ideas to closing deals and refining pricing.*
 
 ### 🏛️ B2B Syndicate Debate (`@buying-committee`)
+
 Pitch a B2B product to simulate the internal debate of a buying committee:
 > `@buying-committee "We offer a $50k/yr cybersecurity training platform"`
 The system spawns The User, The CFO, and The CISO to debate. Even if the User loves it, if the ROI or Security compliance fails, the deal is BLOCKED.
 
 ### ⚔️ Switching Cost Engine (`@vs-competitor`)
+
 Want to unseat an incumbent? Force the persona to ignore "cool features" and focus entirely on the friction of migrating:
 > `@vs-competitor "Salesforce" "Our CRM is 20% cheaper and has a nicer UI"`
 The persona will violently critique data gravity, contract lock-ins, and staff retraining downtime to prove 20% cheaper isn't enough.
 
 ### 💰 Van Westendorp Pricing (`@price-test`)
+
 Never ask "Would you pay for this?" Instead, pitch a price and let the persona react based on psychological thresholds:
 > `@price-test "$49/month for unlimited exports"`
 Receive unfiltered reactions indicating if the price is a bargain, offensively expensive, or suspiciously cheap.
 
 ### 🔥 Roast My Roadmap (`@roast-roadmap`)
+
 Stop building what users don't need:
 > `@roast-roadmap "1. GenAI integration 2. Dark mode 3. One-click Excel export"`
 The persona will brutally rank these features based on *Desperation to Buy*, flagging Vanity Features and highlighting the true Revenue Driver.
