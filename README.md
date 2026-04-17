@@ -97,10 +97,18 @@ Since PersonaTwin is an AI skill, you trigger commands right inside your AI envi
 
 | Command | Action for the Squad |
 | --- | --- |
-| `@build-persona [demographics]` | Generate high-fidelity 5P personas for your UX targeting |
-| `@momtest [idea]` | Pit a feature idea against the ruthless persona to find the "No" |
-| `@summarize [transcript]` | Extract the "ugly truth" from user interview recordings |
+| `@build-persona <info>` | Generate high-fidelity 5P personas and classify Early Adopters |
+| `@momtest <idea>` | Pit a feature idea against the ruthless persona to find the "No" |
+| `@summarize <transcript>` | Extract the "ugly truth" from user interview recordings (strip Fluff) |
+| `@coach <questions>` | Grade PM/Sales interview scripts to catch bias and leading questions |
+| `@interview-plan` | Auto-generate 5 Mom Test-compliant questions for your persona |
+| `@dig-deeper` | Apply 5-Whys to drill down into the last identified pain point |
+| `@learning-log` | Output a post-interview learning log grouped by feature theme |
 | `@final-summary` | Export a **Validation Dashboard** detailing strategic recommendations |
+| `@buying-committee` | Spawn 3 personas (User, CFO, CISO) to debate B2B purchases |
+| `@vs-competitor <name>` | Evaluate switching costs and data gravity against competitors |
+| `@price-test` | Test price sensitivity thresholds using Van Westendorp principles |
+| `@roast-roadmap` | Rank roadmap features safely based on "Desperation to Buy" |
 
 ### 2. Multi-Market / Industry Personas
 

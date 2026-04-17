@@ -95,10 +95,18 @@ Tương tác trực tiếp với PersonaTwin bên trong không gian làm việc 
 
 | Lệnh tác vụ | Lợi ích cho Team Sản phẩm |
 | --- | --- |
-| `@build-persona [thông tin]` | Tạo tệp Persona nội hàm sâu (khung 5P) dùng cho UX targeting. |
-| `@momtest [ý tưởng]` | Đưa giả thuyết/tính năng cho khách hàng ảo "đập tơi bời" để tìm Nỗi Đau thực. |
-| `@summarize [transcript]` | Trích xuất các sự thật "trần trụi" từ tệp ghi âm/ghi chú phỏng vấn thật. |
-| `@final-summary` | Xuất **Bảng Phân tích Cấp Chiến lược** để báo cáo lên C-Level hoặc chuẩn bị Sprint. |
+| `@build-persona <info>` | Tạo tệp Persona 5P chuyên sâu và phân loại tệp Người tiếp nhận (Early Adopter) |
+| `@momtest <ý tưởng>` | Đưa ý tưởng cho khách hàng ảo "đập tơi bời" để tìm chữ "Không" |
+| `@summarize <transcript>` | Lọc sự thật từ file phỏng vấn (tự động tước bỏ lời khen vô giá trị) |
+| `@coach <câu hỏi>` | Chấm điểm kịch bản phỏng vấn/sale để bắt lỗi dẫn dắt và thiên kiến |
+| `@interview-plan` | Tự động tạo 5 câu hỏi chuẩn Mom Test cho Persona đang tương tác |
+| `@dig-deeper` | Áp dụng chiến thuật 5-Whys khoan sâu vào nỗi đau được tiết lộ |
+| `@learning-log` | Xuất nhật ký thu hoạch (Learning log) gom tóm theo từng cụm vấn đề |
+| `@final-summary` | Xuất **Bảng Phân tích Chiến lược** chốt hạ phương hướng (Pivot/Proceed) |
+| `@buying-committee` | Cùng lúc sinh ra 3 người (User, CFO, CISO) để tranh luận duyệt mua giải pháp B2B |
+| `@vs-competitor <tên>` | Yêu cầu rà soát gắt gao rào cản chuyển đổi/áp dụng (Switching cost) từ đối thủ |
+| `@price-test` | Đánh giá mức độ nhạy cảm của khách hàng với một mức giá (Quy tắc Van Westendorp) |
+| `@roast-roadmap` | Sàng lọc và thẳng tay gạch bỏ các tính năng mộng mơ (Vanity features) trên Roadmap |
 
 ### 2. Mô phỏng Đa Ngành & Phân Vùng Chuyên Sâu
 
