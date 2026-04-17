@@ -331,3 +331,103 @@ Use after completing a real or simulated interview session to organize insights 
 - **Continue / Pivot / Stop**: [Based on the aggregate learnings]
 - **Next action**: [Concrete next step with owner and deadline]
 ```
+
+---
+
+## 9. `@buying-committee` — B2B Syndicate Debate Format
+
+```markdown
+## 🏛️ B2B Buying Committee Verdict
+
+**Target Solution**: [What the PM pitched]
+
+### 💬 Committee Debate
+
+**👤 The User (Champion)**:
+> "[Focuses on usability, time saved, missing features for daily work]"
+
+**👔 The Economic Buyer (CFO/Sponsor)**:
+> "[Focuses on TCO, overlap with current tools, ROI, budget constraints]"
+
+**🛡️ The Scrutinizer (CISO/IT/Legal)**:
+> "[Focuses on integration friction, SOC2/GDPR compliance, data lock-in]"
+
+### 📊 Committee Voting
+- **User**: [Yes / No / Needs more]
+- **Economic Buyer**: [Yes / No / Blocked]
+- **Scrutinizer**: [Yes / No / Blocked]
+
+### 🏁 Final Committee Verdict
+- **[BLOCKED / APPROVED / NEEDS REVISION]**
+- **Reasoning**: [Why it passed or failed the committee consensus]
+```
+
+---
+
+## 10. `@vs-competitor` — Competitor Migration Analysis Output
+
+```markdown
+## ⚔️ Competitor Migration Analysis
+
+**Incumbent Competitor**: [Competitor Name]
+**Your Proposed Solution**: [Feature/Idea]
+
+### 🚧 Switching Friction Analysis
+| Friction Type | Persona's Status Quo Reality | Migration Blockers |
+|:--------------|:-----------------------------|:-------------------|
+| **Data Gravity** | [Historically trapped data] | [Can you migrate it?] |
+| **Workflow Habit** | [Muscle memory / API hooks] | [Training downtime] |
+| **Contractual** | [Sunk cost / annual lock-in] | [Financial penalty] |
+
+### 💬 Persona's Ground Truth
+> "[Direct, impatient explanation of why moving away from the competitor is painful, ignoring minor feature benefits]"
+
+### 🏁 Verdict
+**[PIVOT: Focus elsewhere / ABANDON: Switching cost too high / PROCEED: Pain outweighs friction]**
+```
+
+---
+
+## 11. `@price-test` — Price Sensitivity Output
+
+```markdown
+## 💰 Price Sensitivity Test
+
+**Proposed Price**: [Price/Plan inputted by PM]
+**Status Quo Budget**: [What persona spends today]
+
+### 🧠 Psychological Thresholds (Van Westendorp Mapping)
+- 🔴 **Too Expensive**: "[What they say to outright reject]"
+- 🟡 **Expensive/Fair**: "[Their demanding expectation for this price]"
+- 🟢 **Bargain**: "[Their ease of purchase]"
+- 🟣 **Too Cheap**: "[Their trust/quality objection]"
+
+### 💬 Actual Reaction
+> "[Persona reacts directly to the PM's price anchored to their exact reality]"
+
+### 📉 Purchasing Verdict
+**[REJECTED: Outside buying power / BLOCKED: Requires CFO / APPROVED: Within threshold]**
+```
+
+---
+
+## 12. `@roast-roadmap` — Roadmap Roast Report
+
+```markdown
+## 🔥 Roadmap Roast Report
+
+**Goal**: Eradicate Vanity Features and prioritize Desperation.
+
+### 🥩 The Roast (Feature by Feature)
+
+| Feature | User's Desperation Level | Persona's Unfiltered Reaction | Verdict |
+|:--------|:-------------------------|:------------------------------|:--------|
+| [Feat 1] | 🔥 High / ❄️ Zero | "[Why they care or don't]" | **BUILD** |
+| [Feat 2] | ❄️ Zero | "[It's a vanity feature, we just want it to load faster]" | **DELETE** |
+
+### 🏆 The ONE Revenue Driver
+**[Feature Name]**: This is the only item that actually relieves major Status Quo pain.
+
+### 🗑️ To the Trash Bin
+- [Feature X], [Feature Y] — *These are PM fantasies, not user needs.*
+```

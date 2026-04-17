@@ -7,7 +7,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![skills.sh](https://img.shields.io/badge/skills.sh-Listed-blueviolet.svg)](https://skills.sh/datht-work/personatwin-skill)
-[![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](SKILL.md)
+[![Version](https://img.shields.io/badge/version-4.0.0-blue.svg)](SKILL.md)
 [![Testing: promptfoo](https://img.shields.io/badge/testing-promptfoo-orange.svg)](tests/promptfooconfig.yaml)
 [![Standard: SKILL.md](https://img.shields.io/badge/standard-SKILL.md-purple.svg)](SKILL.md)
 
@@ -139,7 +139,8 @@ PersonaTwin hoàn toàn tuân thủ **SKILL.md Open Standard**, sử dụng trê
 
 | Phiên bản | Ngày | Điểm nổi bật |
 | --- | --- | --- |
-| **v3.0.0** | 01/04/2026 | **Mở Rộng Chiến Lược**. 4 ngành mới (Y tế, Bất động sản, Logistics, Nông nghiệp). 3 region mới (NHẬT\/HÀN, LATAM, CHÂU PHI\/TRUNG ĐÔNG). Lệnh `@interview-plan`, `@learning-log`. GitHub CI. 20 test cases. |
+| **v4.0.0** | 17/04/2026 | **Phiên bản Enterprise & Strategy**. Thêm lệnh `@buying-committee`, `@vs-competitor`, `@price-test`, và `@roast-roadmap` phục vụ chốt sale B2B, dò rủi ro giá và chuyển đổi. Cải tiến CI đồng bộ hoá repo. |
+| **v3.0.0** | 01/04/2026 | **Mở Rộng Chiến Lược**. 4 ngành mới (Y tế, Bất động sản, Logistics, Nông nghiệp). 3 region mới (NHẬT/HÀN, LATAM, CHÂU PHI/TRUNG ĐÔNG). Lệnh `@interview-plan`, `@learning-log`. GitHub CI. 20 test cases. |
 | **v2.3.0** | 01/04/2026 | **Coaching & Intelligence**. Lệnh `@coach`, `@dig-deeper`, phân loại Early Adopter, Customer Slicing. Attribution Rob Fitzpatrick. |
 | **v2.2.0** | 01/04/2026 | **Tuân thủ Mom Test++**. Bộ phân loại Bad Data. Khung Commitment & Advancement. Chiến thuật Đào sâu. 12 test cases. |
 | **v2.1.0** | 30/03/2026 | **Phiên bản Prod**. Thêm Regional Context Rules, lệnh `@final-summary` báo cáo chiến lược, module Agent nhúng độc lập. |
@@ -176,4 +177,4 @@ Cấp phép mã nguồn mở MIT License — xem [LICENSE](LICENSE) để biết
 
 > ⚠️ **Lưu ý Giới hạn:** Kỹ năng này cung cấp các phân tích mô phỏng đẳng cấp để tiết kiệm chi phí làm sản phẩm và tinh chỉnh hướng đi kinh doanh. Đây *KHÔNG* phải là phương án thay thế việc phỏng vấn con người và người dùng mua hàng thực tế ngoài đời.
 
-*Được xây dựng với ❤️ bởi PersonaTwin Team · Phiên bản 3.0.0 · Tháng 04/2026*
+*Được xây dựng với ❤️ bởi PersonaTwin Team · Phiên bản 4.0.0 · Tháng 04/2026*

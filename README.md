@@ -7,7 +7,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![skills.sh](https://img.shields.io/badge/skills.sh-Listed-blueviolet.svg)](https://skills.sh/datht-work/personatwin-skill)
-[![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](SKILL.md)
+[![Version](https://img.shields.io/badge/version-4.0.0-blue.svg)](SKILL.md)
 [![Testing: promptfoo](https://img.shields.io/badge/testing-promptfoo-orange.svg)](tests/promptfooconfig.yaml)
 [![Standard: SKILL.md](https://img.shields.io/badge/standard-SKILL.md-purple.svg)](SKILL.md)
 
@@ -142,7 +142,8 @@ PersonaTwin follows the **SKILL.md Open Standard** and is compatible with:
 
 | Version | Date | Highlights |
 | --- | --- | --- |
-| **v3.0.0** | 2026-04-01 | **Strategic Expansion**. 4 new industry verticals (Healthcare/Real Estate/Logistics/AgTech). 3 new regions (JP\/KR, LATAM, Africa\/ME). `@interview-plan`, `@learning-log`. GitHub Actions CI. 20 test cases. |
+| **v4.0.0** | 2026-04-17 | **Advanced Enterprise Suite**. Introduced `@buying-committee`, `@vs-competitor`, `@price-test`, and `@roast-roadmap` for deeper B2B and strategic alignment. Active sync enforcement. |
+| **v3.0.0** | 2026-04-01 | **Strategic Expansion**. 4 new industry verticals (Healthcare/Real Estate/Logistics/AgTech). 3 new regions (JP/KR, LATAM, Africa/ME). `@interview-plan`, `@learning-log`. GitHub Actions CI. 20 test cases. |
 | **v2.3.0** | 2026-04-01 | **Coaching & Intelligence**. `@coach`, `@dig-deeper`, Early Adopter classification, Customer Slicing, Rob Fitzpatrick attribution. |
 | **v2.2.0** | 2026-04-01 | **Mom Test Compliance++**. Bad Data Taxonomy. Commitment & Advancement. Digging tactics. 12 test cases. |
 | **v2.1.0** | 2026-03-30 | **Prod Ready**. Added Regional Context Rules. Added Validation Summary Table (`@final-summary`). Self-contained embedded agents. |
@@ -180,4 +181,4 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 > ⚠️ **Disclaimer:** This skill provides world-class simulation to protect development budgets and refine hypotheses. It is *not* a total substitute for talking to real, paying human users.
 
-*Built with ❤️ by PersonaTwin Team · Version 3.0.0 · April 2026*
+*Built with ❤️ by PersonaTwin Team · Version 4.0.0 · April 2026*
