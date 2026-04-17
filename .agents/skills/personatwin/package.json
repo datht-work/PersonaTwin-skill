@@ -33,6 +33,7 @@
   "license": "MIT",
   "devDependencies": {
     "markdownlint-cli": "^0.40.0",
-    "promptfoo": "^0.60.0"
+    "promptfoo": "latest",
+    "better-sqlite3": "^11.0.0"
   }
 }

@@ -65,6 +65,6 @@ jobs:
         with:
           name: promptfoo-results
           path: |
-            .promptfoo/
-            promptfoo-output.json
+            tests/.promptfoo/
+            tests/promptfoo-output.json
           retention-days: 7
