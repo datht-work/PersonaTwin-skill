@@ -2,7 +2,7 @@
 
 This directory contains examples, golden outputs, and recorded demos of PersonaTwin in action.
 
-## Demo 
+## Demo
 
 ![PersonaTwin Demo](demo.gif)
 

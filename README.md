@@ -24,6 +24,7 @@
 **2. `@interview-plan` - Generating Mom Test questions**
 > **You:** `@interview-plan`
 > **PersonaTwin:**
+>
 > 1. "Walk me through the exact steps you took the last time you handled a morning rush."
 > 2. "How much are you currently paying for your POS system, and what's the worst part about it?"
 > *(Notice: No future tense, no hypotheticals, just past behavior and current pain.)*
@@ -31,6 +32,7 @@
 **3. `@learning-log` - Auto-documenting the interview**
 > **You:** `@learning-log`
 > **PersonaTwin:**
+>
 > - **Theme:** Operational Speed > Loyalty.
 > - **Pain Point:** 5 seconds extra per transaction is a dealbreaker.
 > - **Actionable Insight:** Pivot from standalone QR app to a POS-integrated plugin.

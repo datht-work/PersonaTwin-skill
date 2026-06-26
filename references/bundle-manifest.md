@@ -9,4 +9,5 @@ This manifest defines the available vertical-specific knowledge bundles that Per
 | `fintech` | `knowledge/bundles/fintech.md` | Banking, Crypto, InsurTech |
 
 ## How to Use Bundles
+
 Users can specify the vertical in their persona description (e.g., `--persona "SaaS B2B Manager"`), and the PersonaTwin system will apply the relevant bundle logic.
