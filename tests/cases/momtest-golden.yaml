@@ -1,0 +1,18 @@
+description: "Golden path test for @momtest command"
+prompts:
+  - file://../../SKILL.md
+providers:
+  - id: openai:gpt-4o
+    config:
+      temperature: 0.7
+tests:
+  - description: "Test a bad fitness app idea"
+    vars:
+      input: "@momtest I want to build a fitness app for gamers"
+    assert:
+      - type: icontains
+        value: "gamer"
+      - type: not-icontains
+        value: "great idea"
+      - type: llm-rubric
+        value: "The response must challenge the user's idea, point out behavioral flaws, and ask for evidence of past behavior rather than hypothetical future interest."

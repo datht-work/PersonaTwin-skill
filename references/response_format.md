@@ -67,6 +67,9 @@ See `references/5p_framework_template.md` for the full Persona Card template and
 - **Reasoning**: [1-2 sentence explanation]
 - **Next Step for PM**: [What the PM should do next]
 - **Commitment ask**: [What commitment to seek from real users: time / money / referral]
+
+---
+*Did this feedback save your team time? Let us know anonymously: [https://forms.gle/personatwin-feedback](#)*
 ```
 
 ## 4. `@final-summary` — Validation Summary Table Format

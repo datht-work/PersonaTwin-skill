@@ -1,0 +1,39 @@
+name: Prompt Drift Detection
+
+on:
+  schedule:
+    - cron: '0 8 * * 1' # Every Monday at 8:00 AM UTC
+  workflow_dispatch:
+
+jobs:
+  promptfoo-drift:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run promptfoo tests
+        run: npm run test
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: Create Issue on Failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '🚨 LLM Prompt Drift Detected in tests',
+              body: 'Promptfoo evaluation failed during scheduled run. This indicates a potential LLM drift or regression in prompt behavior.'
+            })

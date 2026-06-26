@@ -1,0 +1,57 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version tag (e.g., v4.0.0)'
+        required: true
+
+jobs:
+  release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Extract Release Notes from CHANGELOG
+        id: changelog
+        run: |
+          # A simple script to extract the release notes for the latest version from CHANGELOG.md
+          # Assumes standard Keep a Changelog format: ## [Version] - Date
+          TAG_NAME=${GITHUB_REF#refs/tags/}
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            TAG_NAME=${{ github.event.inputs.version }}
+          fi
+          
+          # Strip the 'v' prefix if your changelog doesn't use it
+          VERSION=${TAG_NAME#v}
+          
+          echo "Extracting release notes for version $VERSION"
+          
+          # Extract the section corresponding to the version
+          awk -v ver="$VERSION" '
+            /^## \[/ {
+              if (capture) { exit }
+              if ($2 == "["ver"]" || $2 == ver) { capture = 1; next }
+            }
+            capture { print }
+          ' CHANGELOG.md > release_notes.md
+          
+          if [ ! -s release_notes.md ]; then
+            echo "No release notes found in CHANGELOG.md for $VERSION. Creating default notes."
+            echo "Release $TAG_NAME" > release_notes.md
+          fi
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.event.inputs.version || github.ref_name }}
+          name: Release ${{ github.event.inputs.version || github.ref_name }}
+          body_path: release_notes.md
+          draft: false
+          prerelease: false
