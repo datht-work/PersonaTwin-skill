@@ -5,11 +5,37 @@
 
 **Protect your Product Team from "polite lies" by simulating ruthless, real-world users.**
 
+> **TL;DR for PMs:** PersonaTwin is an AI skill that acts as a ruthless "Truth Filter" for your feature ideas, using the Mom Test framework. Install it via `npx skills add datht-work/personatwin-skill`, use `@momtest "my idea"` to see why users won't actually pay for it, and generate `@learning-log` to convince stakeholders to pivot. Stop wasting months building features that nobody wants!
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![skills.sh](https://img.shields.io/badge/skills.sh-Listed-blueviolet.svg)](https://skills.sh/datht-work/personatwin-skill)
 [![Version](https://img.shields.io/badge/version-4.0.0-blue.svg)](SKILL.md)
 [![Testing: promptfoo](https://img.shields.io/badge/testing-promptfoo-orange.svg)](tests/promptfooconfig.yaml)
 [![Standard: SKILL.md](https://img.shields.io/badge/standard-SKILL.md-purple.svg)](SKILL.md)
+
+---
+
+## ⚡ Quick Examples
+
+**1. `@momtest` - Exposing a flawed idea**
+> **You:** `@momtest "I want to build a QR loyalty app for your cafe."`
+> **PersonaTwin:** "My morning rush is a warzone. Scanning a QR code adds 5 seconds per customer. If this isn't faster than punching a cash register, my staff will ignore it. Can it integrate directly into my existing POS without any extra taps?"
+
+**2. `@interview-plan` - Generating Mom Test questions**
+> **You:** `@interview-plan`
+> **PersonaTwin:**
+>
+> 1. "Walk me through the exact steps you took the last time you handled a morning rush."
+> 2. "How much are you currently paying for your POS system, and what's the worst part about it?"
+> *(Notice: No future tense, no hypotheticals, just past behavior and current pain.)*
+
+**3. `@learning-log` - Auto-documenting the interview**
+> **You:** `@learning-log`
+> **PersonaTwin:**
+>
+> - **Theme:** Operational Speed > Loyalty.
+> - **Pain Point:** 5 seconds extra per transaction is a dealbreaker.
+> - **Actionable Insight:** Pivot from standalone QR app to a POS-integrated plugin.
 
 ---
 
