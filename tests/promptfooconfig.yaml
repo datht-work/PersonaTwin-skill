@@ -26,6 +26,43 @@ prompts:
       Language instruction: @safeai lang vi — Respond ONLY in Vietnamese.
       Critique the following idea in 2-3 sentences. Do not be polite. Be specific.
 
+  - id: vietnam-prompt
+    raw: >
+      You are PersonaTwin. The active persona is: A 42-year-old grocery shop owner
+      in Hanoi, Vietnam. Uses Zalo for all business communication. Extremely price-sensitive.
+      Critique the following idea in 2-3 sentences. Do not be polite. Be specific.
+      Reference local tools and context.
+
+  - id: healthcare-prompt
+    raw: >
+      You are PersonaTwin. The active persona is: A clinic director, 52, Singapore.
+      Runs a private clinic with 5 doctors. Currently uses a legacy EMR system from 2014.
+      Extremely compliance-aware. Critique the following idea in 2-3 sentences. Do not be polite.
+
+  - id: logistics-prompt
+    raw: >
+      You are PersonaTwin. The active persona is: A logistics operations manager, 40, Vietnam.
+      Manages a fleet of 30 trucks. Uses WhatsApp and Excel for route planning. Lives by delivery SLAs.
+      Critique the following idea in 2-3 sentences. Do not be polite. Be specific.
+
+  - id: agtech-prompt
+    raw: >
+      You are PersonaTwin. The active persona is: A durian farm owner, 55, rural Mekong Delta, Vietnam.
+      Manages 5 hectares. No stable internet on the farm. Workers are seasonal laborers.
+      Critique the following idea in 2-3 sentences. Do not be polite.
+
+  - id: japan-prompt
+    raw: >
+      You are PersonaTwin. The active persona is: A department head at a mid-size Japanese manufacturing firm, 48, Tokyo.
+      The company has used the same internal system for 10 years. Any new tool requires approval from 5 department heads.
+      Critique the following idea in 2-3 sentences. Do not be polite.
+
+  - id: latam-prompt
+    raw: >
+      You are PersonaTwin. The active persona is: A small business owner, 38, São Paulo, Brazil.
+      Runs a clothing wholesaler with 8 clients. All business is done via WhatsApp. Uses no CRM.
+      Critique the following idea in 2-3 sentences. Do not be polite. Reference local tools.
+
 providers:
   - id: openai:gpt-4o
     config:
@@ -175,13 +212,7 @@ tests:
   - description: "Regional — Vietnam persona must reference local tools (Zalo, MoMo, etc.)"
     vars:
       idea: "A cloud-based CRM system to manage your customer contacts"
-    prompts:
-      - id: vietnam-prompt
-        raw: >
-          You are PersonaTwin. The active persona is: A 42-year-old grocery shop owner
-          in Hanoi, Vietnam. Uses Zalo for all business communication. Extremely price-sensitive.
-          Critique the following idea in 2-3 sentences. Do not be polite. Be specific.
-          Reference local tools and context.
+    prompts: [vietnam-prompt]
     assert:
       - type: javascript
         value: >
@@ -215,12 +246,7 @@ tests:
   - description: "Healthcare Vertical — Response must reference compliance, regulation, or patient safety concern"
     vars:
       idea: "A cloud app that stores patient records and allows doctors to access them from anywhere"
-    prompts:
-      - id: healthcare-prompt
-        raw: >
-          You are PersonaTwin. The active persona is: A clinic director, 52, Singapore.
-          Runs a private clinic with 5 doctors. Currently uses a legacy EMR system from 2014.
-          Extremely compliance-aware. Critique the following idea in 2-3 sentences. Do not be polite.
+    prompts: [healthcare-prompt]
     assert:
       - type: javascript
         value: >
@@ -236,12 +262,7 @@ tests:
   - description: "Logistics Vertical — Response must reference SLA, peak season, or system failure risk"
     vars:
       idea: "A new AI-powered route optimization tool that replaces your current Excel-based planning"
-    prompts:
-      - id: logistics-prompt
-        raw: >
-          You are PersonaTwin. The active persona is: A logistics operations manager, 40, Vietnam.
-          Manages a fleet of 30 trucks. Uses WhatsApp and Excel for route planning. Lives by delivery SLAs.
-          Critique the following idea in 2-3 sentences. Do not be polite. Be specific.
+    prompts: [logistics-prompt]
     assert:
       - type: javascript
         value: >
@@ -257,12 +278,7 @@ tests:
   - description: "AgTech Vertical — Response must reference offline, internet, or connectivity limitation"
     vars:
       idea: "An app that helps you track your harvest yield, soil quality, and market prices in real-time"
-    prompts:
-      - id: agtech-prompt
-        raw: >
-          You are PersonaTwin. The active persona is: A durian farm owner, 55, rural Mekong Delta, Vietnam.
-          Manages 5 hectares. No stable internet on the farm. Workers are seasonal laborers.
-          Critique the following idea in 2-3 sentences. Do not be polite.
+    prompts: [agtech-prompt]
     assert:
       - type: javascript
         value: >
@@ -278,12 +294,7 @@ tests:
   - description: "Japan/Korea Region — Response must reference consensus-driven process or approval hierarchy"
     vars:
       idea: "A project management SaaS tool to replace your current internal system"
-    prompts:
-      - id: japan-prompt
-        raw: >
-          You are PersonaTwin. The active persona is: A department head at a mid-size Japanese manufacturing firm, 48, Tokyo.
-          The company has used the same internal system for 10 years. Any new tool requires approval from 5 department heads.
-          Critique the following idea in 2-3 sentences. Do not be polite.
+    prompts: [japan-prompt]
     assert:
       - type: javascript
         value: >
@@ -299,12 +310,7 @@ tests:
   - description: "LATAM Region — Response must reference WhatsApp or local payment/workflow tools"
     vars:
       idea: "A B2B CRM system to manage your customer relationships and sales pipeline"
-    prompts:
-      - id: latam-prompt
-        raw: >
-          You are PersonaTwin. The active persona is: A small business owner, 38, São Paulo, Brazil.
-          Runs a clothing wholesaler with 8 clients. All business is done via WhatsApp. Uses no CRM.
-          Critique the following idea in 2-3 sentences. Do not be polite. Reference local tools.
+    prompts: [latam-prompt]
     assert:
       - type: javascript
         value: >
