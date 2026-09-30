@@ -14,6 +14,8 @@ jobs:
   release:
     name: Create GitHub Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -48,10 +50,11 @@ jobs:
           fi
 
       - name: Create Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.event.inputs.version || github.ref_name }}
           name: Release ${{ github.event.inputs.version || github.ref_name }}
           body_path: release_notes.md
           draft: false
           prerelease: false
+
